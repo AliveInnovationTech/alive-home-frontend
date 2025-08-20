@@ -6,7 +6,7 @@ export default async function ResetPasswordPage({
 }: {
   searchParams: any;
 }) {
-  const resetPasswordToken = searchParams?.resetToken;
+  const resetPasswordToken = searchParams?.token;
   return (
     <div className="text-[#414242] md:flex justify-between h-screen overflow-y-hidden">
       <ResetPassword token={resetPasswordToken} />
