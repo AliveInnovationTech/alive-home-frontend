@@ -64,9 +64,7 @@ export default function LoginHome() {
     toast.success("Login Successful");
     const session = await getSession();
     console.log(session, "this is session here====");
-    if (session?.user?.role === "ADMIN") {
-      router.push("/admin");
-    } else if (session?.user?.role === "HOMEOWNER") {
+    if (session?.user?.role) {
       router.push("/admin");
     }
   };
