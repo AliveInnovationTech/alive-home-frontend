@@ -113,7 +113,7 @@ export default function Navbar() {
                 href="/signup"
                 className="bg-[#C77D01] hover:bg-[#C77D01]/90 dark:bg-muted dark:border px-3 py-2 text-sm font-normal text-[#FFFFFF] rounded-md"
               >
-                Create free account 
+                Get Started 
               </Link>
             </motion.div>
           </div>
