@@ -5,8 +5,7 @@ import { auth } from "@/auth";
 
 export const metadata: Metadata = {
   title: "Jobs | Alive homes ai",
-  description:
-    "Alive homes AI - Hire Africa’s Top 5% Remote Tech Talent Instantly",
+  description: "Alive homes AI - AI-driven real estate technology platform",
 };
 export default async function JobsPage() {
   const session = await auth();

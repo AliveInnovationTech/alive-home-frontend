@@ -4,7 +4,7 @@ import { auth } from "@/auth";
 
 export const metadata: Metadata = {
   title: "Account | Afren ai",
-  description: "Afren AI - Hire Africa’s Top 5% Remote Tech Talent Instantly",
+  description: "Afren AI - AI-driven real estate technology platform",
 };
 export default async function AccountPage() {
   const session = await auth();

@@ -1,11 +1,10 @@
 <div align="center">
-<h1>Alive AI Application</h1>
-<h6><i>Manage your Client with Alive AI Application</i></h6>
+<h1>Alive Homes Application</h1>
+<h6><i>Manage your Client with Alive Homes Application</i></h6>
 <hr />
 </div>
 
 Alive Home is an AI-driven real estate technology platform that leverages proximity-based services, geotechnology, and interactive tools to transform how Nigerians buy, sell, and rent properties. It connects homeowners, developers, realtors, and buyers in real time, reducing fraud, improving decision-making, and increasing access to verified housing information.
-
 
 # 🏗️ Tech Stack
 

@@ -6,11 +6,11 @@ import type { Metadata } from "next";
 import { Toaster } from "sonner";
 import "./globals.css";
 
-const APP_NAME = "Alive ai";
-const APP_DEFAULT_TITLE = "Alive ai";
-const APP_TITLE_TEMPLATE = "%s | Alive ai";
+const APP_NAME = "Alive Homes";
+const APP_DEFAULT_TITLE = "Alive Homes";
+const APP_TITLE_TEMPLATE = "%s | Alive Homes";
 const APP_DESCRIPTION =
-  "Alive AI - Hire Africa’s Top 5% Remote Tech Talent Instantly";
+  "Alive Homes - AI-driven real estate technology platform";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

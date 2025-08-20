@@ -57,7 +57,7 @@ export default function AdminNavBar({ session }: { session: any }) {
                 <span className="flex items-center relative w-20 h-10">
                   <Image
                     src={BrandLogo}
-                    alt="Alive ai brand logo"
+                    alt="Alive Homes brand logo"
                     width={100}
                     height={100}
                     priority
@@ -182,7 +182,7 @@ export default function AdminNavBar({ session }: { session: any }) {
                   <a href="#" className="flex items-center relative w-20 h-10">
                     <Image
                       src={BrandLogo}
-                      alt="Alive ai brand logo"
+                      alt="Alive Homes brand logo"
                       width={100}
                       height={100}
                       priority

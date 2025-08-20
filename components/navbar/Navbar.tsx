@@ -51,7 +51,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center relative  w-20 h-10">
             <Image
               src={BrandLogo}
-              alt="Alive ai brand logo"
+              alt="Alive Homes brand logo"
               width={100}
               height={100}
               priority
@@ -104,7 +104,7 @@ export default function Navbar() {
                 href="/signup"
                 className="bg-[#C77D01] hover:bg-[#C77D01]/90 dark:bg-muted dark:border px-3 py-2 text-sm font-normal text-[#FFFFFF] rounded-md"
               >
-                Get Started 
+                Get Started
               </Link>
             </motion.div>
           </div>
@@ -142,7 +142,7 @@ export default function Navbar() {
                   <a href="#" className="flex items-center">
                     <Image
                       src={BrandLogo}
-                      alt="alive ai brand logo"
+                      alt="Alive Homes brand logo"
                       width={100}
                       height={100}
                       priority

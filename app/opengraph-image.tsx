@@ -12,7 +12,7 @@ export const contentType = "image/png";
 // Image generation
 export default async function Image() {
   return generateOgImage("home", {
-    title: "Alive ai",
+    title: "Alive Homes",
     description:
       "Register, Make Request and got accepted into your desired company!",
   });

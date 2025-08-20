@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 import { auth } from "@/auth";
 
 export const metadata: Metadata = {
-  title: "Notifications | Alive ai",
-  description: "Alive AI - Hire Africa’s Top 5% Remote Tech Talent Instantly",
+  title: "Notifications | Alive Homes",
+  description: "Alive Homes - AI-driven real estate technology platform",
 };
 
 export default async function NotificationPage() {

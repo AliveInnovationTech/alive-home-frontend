@@ -9,7 +9,7 @@ const APP_NAME = "Alive homes ai";
 const APP_DEFAULT_TITLE = "Alive homes ai | Talent";
 const APP_TITLE_TEMPLATE = "%s - Alive homes ai";
 const APP_DESCRIPTION =
-  "Alive homes AI - Hire Africa’s Top 5% Remote Tech Talent Instantly";
+  "Alive homes AI - AI-driven real estate technology platform";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
