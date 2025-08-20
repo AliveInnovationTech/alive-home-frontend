@@ -56,7 +56,7 @@ export default function ResetPassword({ token, userId }: ResetPasswordProps) {
     };
     try {
       const response = await ResetPasswordRequest(body, token, userId);
-      toast.success(response?.message);
+      toast.success(response?.message || "Reset Password successful");
       setTimeout(() => {
         router.push("/login");
       }, 5000);
