@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import BrandLogo from "@/public/assets/alive-home-logo.png";
 import { usePathname } from "next/navigation";
 import { HiMenu, HiX } from "react-icons/hi";
-import { PencilLine } from "lucide-react";
 import { FaQ } from "react-icons/fa6";
 import { useState } from "react";
 import Image from "next/image";
@@ -70,14 +69,6 @@ export default function Navbar() {
                 pathname !== "/blog" && ""
               } p-2 md:p-0 mt-2 text-[#000000] font-medium rounded-lg md:space-x-5 lg:space-x-8 md:mt-0 md:border-0 hidden md:flex flex-row`}
             >
-              <Link
-                href="/blog"
-                className="relative group flex items-center gap-2 w-fit px-2.5 py-1.5 rounded-lg"
-              >
-                <PencilLine className="size-4" />
-                <span>Blog</span>
-                <span className="absolute left-0 -bottom-0.5 h-0.5 w-full scale-x-0 bg-muted-foreground origin-left transition-transform duration-200 group-hover:scale-x-100" />
-              </Link>
               {pathname !== "/blog" &&
                 routes.map((route, index) => {
                   const Icon = route.icon;

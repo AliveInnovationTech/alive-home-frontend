@@ -1,5 +1,4 @@
 import ExploreLocations from "@/components/landing-page/ExploreLocations";
-import RecentShot from "@/components/landing-page/RecentShot";
 import Subscribe from "@/components/landing-page/Subscribe";
 import Process from "@/components/landing-page/Process";
 import Hero from "@/components/landing-page/Hero";
@@ -13,7 +12,6 @@ export default function Home() {
       <Hero />
       <Navbar />
       <ExploreLocations />
-      <RecentShot />
       <Process />
       <Faq />
       <Subscribe />
