@@ -6,10 +6,11 @@ export default async function ResetPasswordPage({
 }: {
   searchParams: any;
 }) {
-  const resetPasswordToken = searchParams?.token;
+  const token = searchParams?.token;
+  const userId = searchParams.userId;
   return (
     <div className="text-[#414242] md:flex justify-between h-screen overflow-y-hidden">
-      <ResetPassword token={resetPasswordToken} />
+      <ResetPassword token={token} userId={userId} />
       <RightContainer />
     </div>
   );

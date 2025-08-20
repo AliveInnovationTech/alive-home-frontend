@@ -8,12 +8,12 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto">
           <h2 className="font-bold text-4xl">Alive Homes</h2>
           <p className="mt-4 md:mt-8 lg:mt-10 mb-4 text-xs md:text-sm xl:text-base leading-6">
-            Alive is a digital platform designed to connect location managers,
-            filmmakers, and other creative professionals with unique, rentable
-            spaces for film shoots, photoshoots, and events. Our app simplifies
-            the process of finding, booking, and managing locations by bringing
-            together a diverse catalog of properties and venues all in one
-            place.
+            Alive Home is an AI-driven real estate technology platform that
+            leverages proximity-based services, geotechnology, and interactive
+            tools to transform how Nigerians buy, sell, and rent properties. It
+            connects homeowners, developers, realtors, and buyers in real time,
+            reducing fraud, improving decision-making, and increasing access to
+            verified housing information.
           </p>
           <p className="font-bold text-sm md:text-base ">
             ISO Certification (ISO 9001, 27001).

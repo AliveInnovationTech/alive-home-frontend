@@ -14,6 +14,7 @@ import * as yup from "yup";
 
 interface ResetPasswordProps {
   token: string;
+  userId: string;
 }
 
 const schema = yup.object().shape({
@@ -29,7 +30,7 @@ const schema = yup.object().shape({
     .max(32, "Confirm Password must not exceed 15 characters"),
 });
 
-export default function ResetPassword({ token }: ResetPasswordProps) {
+export default function ResetPassword({ token, userId }: ResetPasswordProps) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -54,7 +55,7 @@ export default function ResetPassword({ token }: ResetPasswordProps) {
       password: data?.password,
     };
     try {
-      const response = await ResetPasswordRequest(body, token);
+      const response = await ResetPasswordRequest(body, token, userId);
       toast.success(response?.message);
       setTimeout(() => {
         router.push("/login");

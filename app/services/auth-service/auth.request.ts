@@ -110,10 +110,14 @@ export const ForgotPasswordRequest = async (body: any) => {
 };
 
 // RESET PASSWORD REQUEST
-export const ResetPasswordRequest = async (body: any, token: string) => {
+export const ResetPasswordRequest = async (
+  body: any,
+  token: string,
+  userId: string
+) => {
   try {
     const response = await axios.post(
-      `${process.env.NEXT_PUBLIC_BASEURL}/api/v1/auths/reset-password/${token}`,
+      `${process.env.NEXT_PUBLIC_BASEURL}/api/v1/auths/reset-password/${userId}/${token}`,
       body,
       {
         headers: {
@@ -131,4 +135,3 @@ export const ResetPasswordRequest = async (body: any, token: string) => {
     throw error;
   }
 };
-
