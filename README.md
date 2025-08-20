@@ -4,7 +4,8 @@
 <hr />
 </div>
 
-Alive AI is an AI Powered Customizable survey platform, designed to help businesses collect, analyze, and act on customer feedback. The platform enables organizations to create surveys, distribute them across multiple channels, analyze responses in real-time, and integrate with external platforms like Google, Facebook, and Healthgrades for comprehensive review management.
+Alive Home is an AI-driven real estate technology platform that leverages proximity-based services, geotechnology, and interactive tools to transform how Nigerians buy, sell, and rent properties. It connects homeowners, developers, realtors, and buyers in real time, reducing fraud, improving decision-making, and increasing access to verified housing information.
+
 
 # 🏗️ Tech Stack
 
