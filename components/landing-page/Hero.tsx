@@ -1,7 +1,10 @@
+"use client";
 import Image from "next/image";
 import HeroImage from "@/public/assets/realestate.png";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
+  const router = useRouter();
   return (
     <section className="relative h-[750px] lg:h-[922px] w-full">
       {/* Background Image */}
@@ -30,10 +33,16 @@ export default function Hero() {
 
         {/* Buttons */}
         <div className="mt-8 flex space-x-6">
-          <button className="bg-[#C77D01] hover:bg-[#e68a00] text-white px-6 py-3 rounded-md font-semibold">
+          <button
+            onClick={() => router.push("/signup")}
+            className="bg-[#C77D01] hover:bg-[#e68a00] cursor-pointer text-white px-6 py-3 rounded-md font-semibold"
+          >
             Get Started
           </button>
-          <button className="text-gray-900 font-medium hover:underline">
+          <button
+            onClick={() => router.push("/signup")}
+            className="text-gray-900 font-medium hover:underline cursor-pointer"
+          >
             Log In
           </button>
         </div>
