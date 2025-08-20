@@ -1,0 +1,98 @@
+<div align="center">
+<h1>Alive AI Application</h1>
+<h6><i>Manage your Client with Alive AI Application</i></h6>
+<hr />
+</div>
+
+Alive AI is an AI Powered Customizable survey platform, designed to help businesses collect, analyze, and act on customer feedback. The platform enables organizations to create surveys, distribute them across multiple channels, analyze responses in real-time, and integrate with external platforms like Google, Facebook, and Healthgrades for comprehensive review management.
+
+# 🏗️ Tech Stack
+
+- **Framework**: [Next.js 14](https://nextjs.org/) with App Router
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Authentication**: [NestJs](https://nestjs.com/) [NextAuth](https://next-auth.js.org/)
+- **Database**: [Mongodb Database](https://account.mongodb.com/) [Prisma ORM](https://www.prisma.io/)
+- **React TanStack Query**: [React Tanstack Query](https://tanstack.com/query/latest)
+- **React TanStack Table**: [React Tanstack Query](https://tanstack.com/table/v8)
+- **AI Models**: [Vercel AI SDK](https://ai-sdk.dev/) (openai models, gemini models)
+- **Framer Motion**: [Framer Motion](https://motion.dev/docs)
+- **React-Hook Form**: [Redux Hook Form](https://react-hook-form.com)
+- **React-Redux**: [Redux Toolkit](https://redux-toolkit.js.org/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+
+# 🎯 Prototype
+
+![Minion](public/assets/prototype.png)
+
+# 🚀 How to Contribute
+
+### 1. Clone the Repository
+
+```bash
+git clone -b DevCentral https://github.com/olatunde1998/alive-frontend.git
+cd alive-frontend
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Environment Setup
+
+Create a `.env` file in the project root:
+
+```env
+# Site Information (Optional)
+NODE_ENV="development"
+NEXT_PUBLIC_BASEURL="backendurl goes here"
+NEXT_PUBLIC_APP_URL=https://www.alivehomes.vercel.app
+
+# Next-Auth Config
+NEXTAUTH_SECRET=your_nextauth_secrete
+NEXTAUTH_URL=https://www.alivehomes.vercel.app
+NEXTAUTH_DEBUG=true
+
+
+# OpenAI API & Gemini API Key
+OPENAI_API_KEY=afrenai_openai_api_key
+GEMINI_API_KEY=afrenai_gemini_api_key
+```
+
+### 4. Start Development Server
+
+```bash
+yarn dev
+```
+
+Visit [http://localhost:3000](http://localhost:3000) to see your application running!
+
+# Deployment
+
+AWS Amplify was used to deploy the app.
+
+- [AWS AMPLIFY](https://us-east-1.console.aws.amazon.com/amplify)
+
+# License
+
+The MIT License - Copyright (c) 2025 - Present, afrenai / Storage Service.
+
+## 🆘 Support
+
+- **Vercel AI-SDK**: [Vercel AI-SDK Documentation](https://ai-sdk.dev/docs/introduction/)
+- **NextAuth**: [Appwrite Documentation](https://next-auth.js.org/)
+- **Next.js internationalization (i18n)**: [Next.js internationalization (i18n)](https://next-intl.dev/docs)
+
+## 🙏 Acknowledgments
+
+- [Next.js](https://nextjs.org) for Frontend
+- [Vercel AI-SDK](https://ai-sdk.dev/) for AI model access
+- [ExpressJs](https://nestjs.com/) for backend services
+- [Tailwind CSS](https://tailwindcss.com)
+- [Lucide](https://lucide.dev) for icons
+- [NextAuth](https://next-auth.js.org/)
+
+## Built by
+
+- [Rasheed Olatunde](https://github.com/olatunde1998) (Software Developer)
