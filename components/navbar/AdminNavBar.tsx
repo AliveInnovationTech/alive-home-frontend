@@ -97,7 +97,7 @@ export default function AdminNavBar({ session }: { session: any }) {
                       <div className="w-[50px] h-[50px] border-[1.3px] border-slate-200 items-center justify-center flex rounded-full text-[20px] bg-[#C77D01] text-white font-bold">
                         {userProfileData?.basicInfo?.firstName
                           ?.charAt(0)
-                          ?.toUpperCase() ?? "N/A"}
+                          ?.toUpperCase() ?? "AT"}
                       </div>
                     ) : (
                       <Image
