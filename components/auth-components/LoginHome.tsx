@@ -68,9 +68,7 @@ export default function LoginHome() {
     }
 
     // Redirect based on role
-    if (localStorage.getItem("consentForm") === "true") {
-      router.push("/consent-form");
-    } else if (session?.user?.role === "BUYER") {
+    if (session?.user?.role === "BUYER") {
       router.push("/buyer");
       router.refresh();
     } else if (session?.user?.role === "HOMEOWNER") {
