@@ -18,7 +18,7 @@ export default function BottomNav() {
             className={`${
               pathname === item.href ||
               (item.href !== "/" && pathname.startsWith(item.href))
-                ? "text-[#014751]"
+                ? "text-[#C77D01]"
                 : "text-[#515151]"
             } flex flex-col items-center cursor-pointer`}
           >

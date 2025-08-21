@@ -33,9 +33,7 @@ export default function BottomNavBar() {
             href={linkHref}
             key={index}
             className={`${
-              pathname === linkHref
-                ? "text-[#2664A1]"
-                : "text-[#828282]"
+              pathname === linkHref ? "text-[#C77D01]" : "text-[#828282]"
             } flex flex-col items-center cursor-pointer`}
           >
             <Icon size={24} />
