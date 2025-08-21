@@ -23,8 +23,8 @@ export default async function FeedbackPage() {
       </div>
       <div className="gap-2 my-6">
         <Trash
-          headingText="Start Adding Users"
-          subHeadingText="No users have been added yet. Click the 'Add User' button above to create a new user."
+          headingText="No Feedback Yet"
+          subHeadingText="No feedback found yet. Check back later or contact support for assistance."
         />
       </div>
     </main>

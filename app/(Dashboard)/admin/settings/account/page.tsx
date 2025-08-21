@@ -21,12 +21,12 @@ export default async function AccountPage() {
         <p className="text-2xl font-bold mb-2">Account</p>
         <p className="text-gray-500">Manage the Account of your account</p>
       </div>
-      <div className="gap-2 my-6">
+      {/* <div className="gap-2 my-6">
         <Trash
-          headingText="Start Adding Users"
+          headingText=""
           subHeadingText="No users have been added yet. Click the 'Add User' button above to create a new user."
         />
-      </div>
+      </div> */}
     </main>
   );
 }

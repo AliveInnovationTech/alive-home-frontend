@@ -22,10 +22,10 @@ export default async function SecurityPage() {
         <p className="text-gray-500">Manage the Security of your account</p>
       </div>
       <div className="gap-2 my-6">
-        <Trash
-          headingText="Start Adding Users"
+        {/* <Trash
+          headingText=""
           subHeadingText="No users have been added yet. Click the 'Add User' button above to create a new user."
-        />
+        /> */}
       </div>
     </main>
   );

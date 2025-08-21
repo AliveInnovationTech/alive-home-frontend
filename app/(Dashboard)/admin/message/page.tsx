@@ -23,8 +23,8 @@ export default async function MessagePage() {
       </div>
       <div className="gap-2 my-6">
         <Trash
-          headingText="Start Adding Users"
-          subHeadingText="No users have been added yet. Click the 'Add User' button above to create a new user."
+          headingText="No Message"
+          subHeadingText="No message found yet. Kindly please check back later."
         />
       </div>
     </main>
