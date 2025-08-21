@@ -1,14 +1,14 @@
 "use client";
 import { useUserProfile } from "@/app/services/users-service/users.request";
 import { ChevronDown, ChevronRight, LogOut, Settings } from "lucide-react";
-import { adminNavItems } from "@/utils/sidebarLinks";
+import { homeOwnerNavItems } from "@/utils/sidebarLinks";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
 import { cn } from "@/utils/utils";
 import Link from "next/link";
 
-export function AdminSidebar({ session }: { session: any }) {
+export function HomeOwnerSidebar({ session }: { session: any }) {
   const token = session?.user?.token;
   const userId = session?.user?.id as string;
   const [showSignOutProfile, setShowSignOutProfile] = useState(false);
@@ -44,7 +44,7 @@ export function AdminSidebar({ session }: { session: any }) {
     <>
       <div className="flex flex-col justify-between min-h-screen">
         <nav className="grid items-start gap-2">
-          {adminNavItems.map((item, index) => {
+          {homeOwnerNavItems.map((item, index) => {
             const itemSegment = item.href.split("/")[2];
             const isActive = activeSegment === itemSegment;
 

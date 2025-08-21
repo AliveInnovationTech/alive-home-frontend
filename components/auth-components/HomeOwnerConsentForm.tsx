@@ -19,10 +19,11 @@ import {
 import { useState } from "react";
 import { toast } from "sonner";
 
-export default function HomeownerForm() {
+export default function HomeOwnerConsentForm() {
   const { data: session } = useSession();
   const token = session?.user?.token as string;
   const userId = session?.user?.id as string;
+  
   const [formData, setFormData] = useState({
     primaryResidence: "",
     ownershipVerified: false,
@@ -51,6 +52,7 @@ export default function HomeownerForm() {
         files.forEach((file) =>
           formDataUpload.append("verificationDocsUrls", file)
         );
+
         const response = await uploadDocumentsRequest(
           formDataUpload,
           token,
@@ -62,21 +64,31 @@ export default function HomeownerForm() {
         }
         uploadedUrls = response.map((doc: any) => doc.url);
       }
+
       const payload = {
         ...formData,
         verificationDocsUrls: uploadedUrls,
+        userId,
       };
+
       console.log("Final Payload:", payload);
+
       const response = await createHomeOwnerRequest(payload, token);
       console.log("Response:", response);
+
       if (!response) {
-        toast.error("Failed to create homeowner profile");
-        throw new Error("Failed to create homeowner profile");
+        toast.error("Failed to create Profile");
+        throw new Error("Failed to create Profile");
       }
+      localStorage.setItem("consentForm", "false");
       toast.success("Profile created successfully!");
-    } catch (err) {
+    } catch (err: any) {
       console.error("Error submitting form:", err);
-      toast.error("Failed to create profile. Please try again.");
+      if (err.response?.status === 409) {
+        toast.error(err.response.data?.error || "Profile already exists");
+      } else {
+        toast.error("Failed to create profile. Please try again.");
+      }
     }
   };
 

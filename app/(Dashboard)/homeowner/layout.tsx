@@ -1,6 +1,6 @@
-import { AdminSidebar } from "@/components/sidebar/AdminSidebar";
+import { HomeOwnerSidebar } from "@/components/sidebar/HomeOwnerSidebar";
+import HomeOwnerNavBar from "@/components/navbar/HomeOwnerNavBar";
 import BottomNavBar from "@/components/navbar/BottomNavBar";
-import AdminNavBar from "@/components/navbar/AdminNavBar";
 import { Geist, Geist_Mono } from "next/font/google";
 import type { Metadata } from "next";
 import { auth } from "@/auth";
@@ -48,11 +48,11 @@ export default async function StudentLayout({
   const session = await auth();
   return (
     <div className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-      <AdminNavBar session={session} />
+      <HomeOwnerNavBar session={session} />
       <div className="flex flex-col space-y-6 bg-[#F7FAFE] text-[#414242]">
         <div className="grid flex-1 gap-12">
           <div className="hidden w-[200px] md:w-[160px] lg:w-[210px] xl:w-[240px] fixed flex-col lg:block bg-white border-r border-slate-100 pl-6 pr-2 lg:pl-10 pt-32 min-h-screen">
-            <AdminSidebar session={session} />
+            <HomeOwnerSidebar session={session} />
           </div>
           <main className="lg:pl-48 xl:pl-52 xl:pr-6 overflow-x-auto pb-28 md:pb-10 mt-6 lg:mt-0">
             {children}

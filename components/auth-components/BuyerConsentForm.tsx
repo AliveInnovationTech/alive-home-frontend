@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import {
   Select,
@@ -16,10 +17,11 @@ import {
 } from "@/components/ui/select";
 import { toast } from "sonner";
 
-export default function PropertyPreferencesForm() {
+export default function BuyerConsentForm() {
   const { data: session } = useSession();
   const token = session?.user?.token as string;
   const userId = session?.user?.id as string;
+  const router = useRouter();
 
   console.log("User ID is here:", userId);
   console.log("User token is here:", token);
@@ -40,18 +42,27 @@ export default function PropertyPreferencesForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Submitted Preferences:", formData);
     try {
-      const payload = {
-        ...formData,
-        userId,
-      };
+      const payload = { ...formData, userId };
       const response = await createBuyerRequest(payload, token);
+
       toast.success("Preferences saved successfully!");
       console.log("Response:", response);
-    } catch (error) {
-      console.error("Error saving preferences:", error);
-      toast.error("Failed to save preferences. Please try again.");
+      localStorage.setItem("consentForm", "false");
+
+      // Redirect after completion
+      router.push("/buyer");
+    } catch (error: any) {
+      const apiError = error?.response?.data?.error;
+      const status = error?.response?.status;
+
+      if (status === 409 && apiError === "User already has a buyer profile") {
+        localStorage.setItem("consentForm", "false");
+        router.push("/buyer");
+        return;
+      }
+      console.error("Error saving preferences:", apiError || error.message);
+      toast.error(apiError || "Failed to save preferences. Please try again.");
     }
   };
 
@@ -140,9 +151,9 @@ export default function PropertyPreferencesForm() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="HOUSE">House</SelectItem>
-                  <SelectItem value="APARTMENT">Apartment</SelectItem>
-                  <SelectItem value="LAND">Land</SelectItem>
-                  <SelectItem value="DUPLEX">Duplex</SelectItem>
+                  <SelectItem value="CONDO">Condo</SelectItem>
+                  <SelectItem value="TOWNHOUSE">Town House</SelectItem>
+                  <SelectItem value="MULTIFAMILY">Multi Family</SelectItem>
                 </SelectContent>
               </Select>
             </div>

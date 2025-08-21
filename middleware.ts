@@ -12,6 +12,7 @@ export default auth((req) => {
     "/verify-email",
     "/forgot-password",
     "/reset-password",
+    "/consent-form",
     "/opengraph-image",
   ];
   const isPublicPage =
@@ -28,8 +29,13 @@ export default auth((req) => {
 export const config = {
   matcher: [
     "/((?!api|_next/static|_next/image|favicon.ico).*)",
-    "/student-dashboard",
-    "/company-dashboard/:path*",
-    "/student-dashboard/:path*",
+    "/homeowner",
+    "/homeowner/:path*",
+    "/buyer",
+    "/buyer/:path*",
+    "/realtor",
+    "/realtor/:path*",
+    "/developer",
+    "/developer/:path*",
   ],
 };

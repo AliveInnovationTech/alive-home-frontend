@@ -2,7 +2,7 @@
 import { GetUserNotifications } from "@/app/services/users-service/notifications.request";
 import { useUserProfile } from "@/app/services/users-service/users.request";
 import BrandLogo from "@/public/assets/alive-home-logo.png";
-import { adminMobileRoutes } from "@/utils/sidebarLinks";
+import { realtorMobileRoutes } from "@/utils/sidebarLinks";
 import Logout from "@/components/auth-components/Logout";
 import { motion, AnimatePresence } from "framer-motion";
 import { Bell, LogOut, Settings } from "lucide-react";
@@ -14,7 +14,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function AdminNavBar({ session }: { session: any }) {
+export default function RealtorNavBar({ session }: { session: any }) {
   const token = session?.user?.token as string;
   const userId = session?.user?.id as string;
   const [dropNav, setDropNav] = useState(false);
@@ -192,7 +192,7 @@ export default function AdminNavBar({ session }: { session: any }) {
                   />
                 </div>
                 <ul className="flex flex-col mt-4 font-light text-sm rounded-lg space-y-3">
-                  {adminMobileRoutes.map((route, index) => (
+                  {realtorMobileRoutes.map((route, index) => (
                     <li
                       key={index}
                       className="block py-2 pl-1.5 mx-2 pr-3 border-b border-slate-200"

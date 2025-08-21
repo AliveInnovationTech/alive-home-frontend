@@ -13,50 +13,200 @@ import {
 import { GoHome } from "react-icons/go";
 import { MdOutlinePayment } from "react-icons/md";
 
-export const adminNavItems = [
+export const realtorNavItems = [
   {
     name: "Dashboard",
-    href: "/admin",
+    href: "/realtor",
     icon: LayoutGrid,
   },
   {
     name: "Message",
-    href: "/admin/message",
+    href: "/realtor/message",
     icon: MessageCircle,
   },
   {
     name: "Property Search",
-    href: "/admin/property-search",
+    href: "/realtor/property-search",
     icon: BriefcaseBusiness,
   },
   {
     name: "Saved Properties",
-    href: "/admin/saved-properties",
+    href: "/realtor/saved-properties",
     icon: Award,
   },
   {
     name: "Notifications",
-    href: "/admin/notifications",
+    href: "/realtor/notifications",
     icon: CreditCard,
   },
   {
     name: "Settings",
-    href: "/admin/settings",
+    href: "/realtor/settings",
     icon: Settings,
     subLinks: [
       {
         name: "Account",
-        href: "/admin/settings/account",
+        href: "/realtor/settings/account",
         icon: User,
       },
       {
         name: "Security",
-        href: "/admin/settings/security",
+        href: "/realtor/settings/security",
         icon: ShieldMinus,
       },
       {
         name: "Feedback",
-        href: "/admin/settings/feedback",
+        href: "/realtor/settings/feedback",
+        icon: Contact,
+      },
+    ],
+  },
+];
+
+export const buyerNavItems = [
+  {
+    name: "Dashboard",
+    href: "/buyer",
+    icon: LayoutGrid,
+  },
+  {
+    name: "Message",
+    href: "/buyer/message",
+    icon: MessageCircle,
+  },
+  {
+    name: "Property Search",
+    href: "/buyer/property-search",
+    icon: BriefcaseBusiness,
+  },
+  {
+    name: "Saved Properties",
+    href: "/buyer/saved-properties",
+    icon: Award,
+  },
+  {
+    name: "Notifications",
+    href: "/buyer/notifications",
+    icon: CreditCard,
+  },
+  {
+    name: "Settings",
+    href: "/buyer/settings",
+    icon: Settings,
+    subLinks: [
+      {
+        name: "Account",
+        href: "/buyer/settings/account",
+        icon: User,
+      },
+      {
+        name: "Security",
+        href: "/buyer/settings/security",
+        icon: ShieldMinus,
+      },
+      {
+        name: "Feedback",
+        href: "/buyer/settings/feedback",
+        icon: Contact,
+      },
+    ],
+  },
+];
+
+export const homeOwnerNavItems = [
+  {
+    name: "Dashboard",
+    href: "/homeowner",
+    icon: LayoutGrid,
+  },
+  {
+    name: "Message",
+    href: "/homeowner/message",
+    icon: MessageCircle,
+  },
+  {
+    name: "Property Search",
+    href: "/homeowner/property-search",
+    icon: BriefcaseBusiness,
+  },
+  {
+    name: "Saved Properties",
+    href: "/homeowner/saved-properties",
+    icon: Award,
+  },
+  {
+    name: "Notifications",
+    href: "/homeowner/notifications",
+    icon: CreditCard,
+  },
+  {
+    name: "Settings",
+    href: "/homeowner/settings",
+    icon: Settings,
+    subLinks: [
+      {
+        name: "Account",
+        href: "/homeowner/settings/account",
+        icon: User,
+      },
+      {
+        name: "Security",
+        href: "/homeowner/settings/security",
+        icon: ShieldMinus,
+      },
+      {
+        name: "Feedback",
+        href: "/homeowner/settings/feedback",
+        icon: Contact,
+      },
+    ],
+  },
+];
+
+export const developerNavItems = [
+  {
+    name: "Dashboard",
+    href: "/developer",
+    icon: LayoutGrid,
+  },
+  {
+    name: "Message",
+    href: "/developer/message",
+    icon: MessageCircle,
+  },
+  {
+    name: "Property Search",
+    href: "/developer/property-search",
+    icon: BriefcaseBusiness,
+  },
+  {
+    name: "Saved Properties",
+    href: "/developer/saved-properties",
+    icon: Award,
+  },
+  {
+    name: "Notifications",
+    href: "/developer/notifications",
+    icon: CreditCard,
+  },
+  {
+    name: "Settings",
+    href: "/developer/settings",
+    icon: Settings,
+    subLinks: [
+      {
+        name: "Account",
+        href: "/developer/settings/account",
+        icon: User,
+      },
+      {
+        name: "Security",
+        href: "/developer/settings/security",
+        icon: ShieldMinus,
+      },
+      {
+        name: "Feedback",
+        href: "/developer/settings/feedback",
         icon: Contact,
       },
     ],
@@ -64,23 +214,80 @@ export const adminNavItems = [
 ];
 
 // MobileLinks (Navbar)
-export const adminMobileRoutes = [
+export const buyerMobileRoutes = [
   {
     name: "Dashboard",
-    href: `/admin`,
+    href: `/buyer`,
   },
 
   {
     name: "Saved Properties",
-    href: "/admin/saved-properties",
+    href: "/buyer/saved-properties",
   },
   {
     name: "Settings",
-    href: "/admin/settings/account",
+    href: "/buyer/settings/account",
   },
   {
     name: "Notifications",
-    href: "/admin/notifications",
+    href: "/buyer/notifications",
+  },
+];
+export const realtorMobileRoutes = [
+  {
+    name: "Dashboard",
+    href: `/realtor`,
+  },
+
+  {
+    name: "Saved Properties",
+    href: "/realtor/saved-properties",
+  },
+  {
+    name: "Settings",
+    href: "/realtor/settings/account",
+  },
+  {
+    name: "Notifications",
+    href: "/realtor/notifications",
+  },
+];
+export const developerMobileRoutes = [
+  {
+    name: "Dashboard",
+    href: `/developer`,
+  },
+
+  {
+    name: "Saved Properties",
+    href: "/developer/saved-properties",
+  },
+  {
+    name: "Settings",
+    href: "/developer/settings/account",
+  },
+  {
+    name: "Notifications",
+    href: "/developer/notifications",
+  },
+];
+export const homeOwnerMobileRoutes = [
+  {
+    name: "Dashboard",
+    href: `/homeowner`,
+  },
+
+  {
+    name: "Saved Properties",
+    href: "/homeowner/saved-properties",
+  },
+  {
+    name: "Settings",
+    href: "/homeowner/settings/account",
+  },
+  {
+    name: "Notifications",
+    href: "/homeowner/notifications",
   },
 ];
 
