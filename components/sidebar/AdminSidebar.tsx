@@ -1,7 +1,7 @@
 "use client";
 import { useUserProfile } from "@/app/services/users-service/users.request";
 import { ChevronDown, ChevronRight, LogOut, Settings } from "lucide-react";
-import { studentNavItems } from "@/utils/sidebarLinks";
+import { adminNavItems } from "@/utils/sidebarLinks";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { signOut } from "next-auth/react";
@@ -44,7 +44,7 @@ export function AdminSidebar({ session }: { session: any }) {
     <>
       <div className="flex flex-col justify-between min-h-screen">
         <nav className="grid items-start gap-2">
-          {studentNavItems.map((item, index) => {
+          {adminNavItems.map((item, index) => {
             const itemSegment = item.href.split("/")[2];
             const isActive = activeSegment === itemSegment;
 

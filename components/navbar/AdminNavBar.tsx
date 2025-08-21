@@ -2,7 +2,7 @@
 import { GetUserNotifications } from "@/app/services/users-service/notifications.request";
 import { useUserProfile } from "@/app/services/users-service/users.request";
 import BrandLogo from "@/public/assets/alive-home-logo.png";
-import { studentMobileRoutes } from "@/utils/sidebarLinks";
+import { adminMobileRoutes } from "@/utils/sidebarLinks";
 import Logout from "@/components/auth-components/Logout";
 import { motion, AnimatePresence } from "framer-motion";
 import { Bell, LogOut, Settings } from "lucide-react";
@@ -65,7 +65,7 @@ export default function AdminNavBar({ session }: { session: any }) {
                   />
                 </span>
               </div>
-              <div className="border-l border-slate-300 dark:border-muted pl-3 ml-3 space-y-3 hidden md:inline-block">
+              <div className="border-l border-slate-300 pl-3 ml-3 space-y-3 hidden md:inline-block">
                 <p className="text-xs font-light">
                   Hi {userProfileData?.basicInfo?.firstName ?? "Alive Homes"}
                 </p>
@@ -80,11 +80,9 @@ export default function AdminNavBar({ session }: { session: any }) {
                 >
                   <div className="relative">
                     <Bell size={32} />
-                    {notificationData?.meta?.totalUnreadNotifications >= 1 && (
-                      <div className="absolute -top-4 -right-4 bg-[#DE3024] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                        {notificationData?.meta?.totalUnreadNotifications}
-                      </div>
-                    )}
+                    <div className="absolute -top-4 -right-4 bg-[#DE3024] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                      {notificationData?.meta?.totalUnreadNotifications || 0}
+                    </div>
                   </div>
                 </Link>
 
@@ -112,20 +110,17 @@ export default function AdminNavBar({ session }: { session: any }) {
                       ref={dropdownRef}
                       className={`${
                         showActions === true ? "block" : "hidden"
-                      } bg-white py-3 shadow-md rounded-lg text-sm border border-[#213f7d0f] dark:border-muted  space-y-2 absolute right-[-1px] lg:right-[-18px] z-[1] top-[50px]`}
+                      } bg-white py-3 shadow-md rounded-lg text-sm border border-[#213f7d0f] space-y-2 absolute right-[-1px] lg:right-[-18px] z-[1] top-[50px]`}
                     >
                       <Link
                         href={`/admin/settings/account`}
-                        className="hover:bg-gray-100 dark:hover:bg-accent dark:text-accent-foreground flex items-center gap-x-2 cursor-pointer p-2 pr-10 pl-4"
+                        className="hover:bg-gray-100 flex items-center gap-x-2 cursor-pointer p-2 pr-10 pl-4"
                       >
-                        <Settings
-                          size={18}
-                          className="text-gray-600 dark:text-accent-foreground"
-                        />
+                        <Settings size={18} className="text-gray-600" />
                         Settings
                       </Link>
                       <div
-                        className="hover:bg-gray-100 dark:hover:bg-accent flex items-center gap-x-2 cursor-pointer text-red-600 p-2 pr-20 pl-4"
+                        className="hover:bg-gray-100 flex items-center gap-x-2 cursor-pointer text-red-600 p-2 pr-20 pl-4"
                         onClick={() => {
                           setShowActions(false);
                           setShowLogOut(true);
@@ -142,9 +137,8 @@ export default function AdminNavBar({ session }: { session: any }) {
           </div>
           {/* ======= Menu button (Hamburger button) ======*/}
           <div className="lg:hidden flex space-x-3">
-            {/* <ThemeToggle /> */}
             <Link
-              href={`/student-dashboard/notifications`}
+              href={`/admin/notifications`}
               className="bg-slate-300 dark:hover:bg-muted p-2 rounded-lg flex items-center justify-center"
             >
               <div className="relative">
@@ -190,7 +184,7 @@ export default function AdminNavBar({ session }: { session: any }) {
                     />
                   </a>
                   <HiX
-                    className="text-lg transition mt-2 dark:text-accent-foreground"
+                    className="text-lg transition mt-2"
                     size={32}
                     onClick={() => {
                       setDropNav(false);
@@ -198,10 +192,10 @@ export default function AdminNavBar({ session }: { session: any }) {
                   />
                 </div>
                 <ul className="flex flex-col mt-4 font-light text-sm rounded-lg space-y-3">
-                  {studentMobileRoutes.map((route, index) => (
+                  {adminMobileRoutes.map((route, index) => (
                     <li
                       key={index}
-                      className="block py-2 pl-1.5 mx-2 pr-3 border-b border-slate-200 dark:border-muted dark:text-accent-foreground"
+                      className="block py-2 pl-1.5 mx-2 pr-3 border-b border-slate-200"
                     >
                       <Link
                         onClick={() => {
@@ -218,7 +212,7 @@ export default function AdminNavBar({ session }: { session: any }) {
 
                 <div
                   onClick={() => setShowLogOut(true)}
-                  className="mt-10 ml-3 text-sm flex items-center space-x-4 hover:bg-[#EDEDF1] p-2 pr-3  cursor-pointer rounded-lg w-fit font-light text-white shadow-sm bg-gradient-to-r from-[#49AD51] to-[#B1D045] dark:bg-muted dark:bg-gradient-to-r dark:from-muted dark:to-muted-foreground"
+                  className="mt-10 ml-3 text-sm flex items-center space-x-4 hover:bg-[#C77D01]/90 p-2 pr-3  cursor-pointer rounded-lg w-fit font-light text-white shadow-sm bg-[#C77D01]"
                 >
                   <LogOut size={16} />
                   <p>Log out</p>
