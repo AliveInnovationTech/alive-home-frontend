@@ -1,5 +1,5 @@
 "use client";
-import { useUserProfile } from "@/app/services/freelancer-service/users.request";
+import { useUserProfile } from "@/app/services/users-service/users.request";
 import { ChevronDown, ChevronRight, LogOut, Settings } from "lucide-react";
 import { studentNavItems } from "@/utils/sidebarLinks";
 import { useEffect, useRef, useState } from "react";

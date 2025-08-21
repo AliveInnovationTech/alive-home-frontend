@@ -1,5 +1,5 @@
+import { StatisticsCard } from "@/components/cards/StatisticsCard";
 import { redirect } from "next/navigation";
-import type { Metadata } from "next";
 import { auth } from "@/auth";
 
 export default async function DashboardPage() {
@@ -13,9 +13,12 @@ export default async function DashboardPage() {
         <p className="text-2xl font-bold mb-2">Dashboard</p>
         <p className="text-gray-500">Manage the Dashboard of your account</p>
       </div>
-      {/* <section className="h-fit border mt-8 p-6 rounded-md">
-        <Dashboard token={token} userId={userId} />
-      </section> */}
+      <div className="my-8 grid grid-cols-2 gap-3 xl:grid-cols-4 xl:gap-6">
+        <StatisticsCard title={"Saved Properties"} value={20} />
+        <StatisticsCard title={"New Recommendations"} value={40} />
+        <StatisticsCard title={"Saved Properties"} value={50} />
+        <StatisticsCard title={"Saved Properties"} value={80} />
+      </div>
     </main>
   );
 }

@@ -2,6 +2,7 @@
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { auth } from "@/auth";
+import PropertySearch from "@/components/molecules/PropertySearch";
 
 export const metadata: Metadata = {
   title: "Jobs | Alive homes ai",
@@ -23,6 +24,7 @@ export default async function JobsPage() {
       {/* <section className="h-fit border mt-8 p-6 rounded-md">
        <Jobs token={token} userId={userId} />
      </section> */}
+      <PropertySearch />
     </main>
   );
 }

@@ -1,3 +1,4 @@
+import Trash from "@/components/trash/Trash";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { auth } from "@/auth";
@@ -20,9 +21,12 @@ export default async function MessagePage() {
         <p className="text-2xl font-bold mb-2">Message</p>
         <p className="text-gray-500">Manage the Message of your account</p>
       </div>
-      {/* <section className="h-fit border mt-8 p-6 rounded-md">
-        <Message token={token} userId={userId} />
-      </section> */}
+      <div className="gap-2 my-6">
+        <Trash
+          headingText="Start Adding Users"
+          subHeadingText="No users have been added yet. Click the 'Add User' button above to create a new user."
+        />
+      </div>
     </main>
   );
 }

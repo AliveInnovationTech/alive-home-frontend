@@ -1,6 +1,6 @@
 "use client";
-import { GetUserNotifications } from "@/app/services/freelancer-service/notifications.request";
-import { useUserProfile } from "@/app/services/freelancer-service/users.request";
+import { GetUserNotifications } from "@/app/services/users-service/notifications.request";
+import { useUserProfile } from "@/app/services/users-service/users.request";
 import BrandLogo from "@/public/assets/alive-home-logo.png";
 import { studentMobileRoutes } from "@/utils/sidebarLinks";
 import Logout from "@/components/auth-components/Logout";

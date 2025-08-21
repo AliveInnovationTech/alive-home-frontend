@@ -2,6 +2,7 @@
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { auth } from "@/auth";
+import Trash from "@/components/trash/Trash";
 
 export const metadata: Metadata = {
   title: "Notifications | Alive Homes",
@@ -25,9 +26,12 @@ export default async function NotificationPage() {
           your dashboard.
         </p>
       </div>
-      {/* <section className="h-fit border mt-8 rounded-md">
-        <Notification token={token} />
-      </section> */}
+      <div className="gap-2 my-6">
+        <Trash
+          headingText="Start Adding Users"
+          subHeadingText="No users have been added yet. Click the 'Add User' button above to create a new user."
+        />
+      </div>
     </main>
   );
 }

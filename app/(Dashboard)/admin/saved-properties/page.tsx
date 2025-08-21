@@ -1,10 +1,11 @@
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { auth } from "@/auth";
+import SavedProperties from "@/components/molecules/SavedProperties";
 
 export const metadata: Metadata = {
-  title: "Test | Afren ai",
-  description: "Afren AI - AI-driven real estate technology platform",
+  title: "Saved Property | Alive Homes",
+  description: "Alive homes AI - AI-driven real estate technology platform",
 };
 export default async function TestPage() {
   const session = await auth();
@@ -20,9 +21,8 @@ export default async function TestPage() {
         <p className="text-2xl font-bold mb-2">Saved Properties</p>
         <p className="text-gray-500">Manage the saved properties here</p>
       </div>
-      {/* <section className="h-fit border mt-8 p-6 rounded-md">
-        <Test token={token} userId={userId} />
-      </section> */}
+
+      <SavedProperties />
     </main>
   );
 }

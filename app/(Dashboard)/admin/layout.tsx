@@ -54,7 +54,7 @@ export default async function StudentLayout({
           <div className="hidden w-[200px] md:w-[160px] lg:w-[210px] xl:w-[240px] fixed flex-col lg:block bg-white border-r border-slate-100 pl-6 pr-2 lg:pl-10 pt-32 min-h-screen">
             <AdminSidebar session={session} />
           </div>
-          <main className="lg:pl-48 xl:pl-52 xl:pr-6 overflow-x-auto pb-28 md:pb-10 mt-6">
+          <main className="lg:pl-48 xl:pl-52 xl:pr-6 overflow-x-auto pb-28 md:pb-10 mt-6 lg:mt-0">
             {children}
           </main>
           <BottomNavBar />
