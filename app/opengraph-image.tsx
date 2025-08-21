@@ -13,7 +13,6 @@ export const contentType = "image/png";
 export default async function Image() {
   return generateOgImage("home", {
     title: "Alive Homes",
-    description:
-      "Register, Make Request and got accepted into your desired company!",
+    description: "Alive homes AI - AI-driven real estate technology platform",
   });
 }
