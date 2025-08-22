@@ -138,7 +138,7 @@ export default function WhyChooseUs() {
                 transition={{ duration: 0.3, ease: easeOut }}
                 className={`absolute -inset-1 ${feature.color} rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-300`}
               />
-              <div className="relative bg-white rounded-2xl p-8 shadow-xl border border-gray-100 h-full transition-all duration-300 group-hover:shadow-2xl group-hover:border-gray-200">
+              <div className="relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 h-full transition-all duration-300 group-hover:shadow-2xl group-hover:border-gray-200">
                 <motion.div
                   whileHover={{ rotate: 5, scale: 1.1 }}
                   transition={{ duration: 0.3, ease: easeOut }}
