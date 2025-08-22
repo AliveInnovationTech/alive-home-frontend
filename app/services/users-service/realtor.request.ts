@@ -1,13 +1,10 @@
 import axios from "axios";
 
-// CREATE A HOMEOWNER REQUEST
-export const createHomeOwnerRequest = async (
-  body: any,
-  token: string
-) => {
+// CREATE A REALTOR REQUEST
+export const createRealtorRequest = async (body: any, token: string) => {
   try {
     const response = await axios.post(
-      `${process.env.NEXT_PUBLIC_BASEURL}/api/v1/homeowners`,
+      `${process.env.NEXT_PUBLIC_BASEURL}/api/v1/realtors`,
       body,
       {
         headers: {
@@ -25,7 +22,7 @@ export const createHomeOwnerRequest = async (
   }
 };
 
-// CREATE DOCUMENT REQUEST
+// CREATE REALTOR DOCUMENT REQUEST
 export const uploadDocumentsRequest = async (
   payload: any,
   token: string,
@@ -33,7 +30,7 @@ export const uploadDocumentsRequest = async (
 ) => {
   try {
     const response = await axios.post(
-      `${process.env.NEXT_PUBLIC_BASEURL}/api/v1/homeowners/${homeownerId}/documents`,
+      `${process.env.NEXT_PUBLIC_BASEURL}/api/v1/realtors/${homeownerId}/documents`,
       payload,
       {
         headers: {
@@ -52,8 +49,8 @@ export const uploadDocumentsRequest = async (
   }
 };
 
-// DELETE HOMEOWNER REQUEST
-export const DeleteHomeOwnerRequest = async (userId: string, token: string) => {
+// DELETE REALTOR REQUEST
+export const DeleteRealtorRequest = async (userId: string, token: string) => {
   try {
     const response = await axios.delete(
       `${process.env.NEXT_PUBLIC_BASEURL}/accounts/user/${userId}`,
