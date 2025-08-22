@@ -35,7 +35,7 @@ export default function Process() {
             ))}
           </div>
 
-          <button className="bg-[#C77D01] hover:bg-[#C77D01]/90 p-2 py-3 cursor-pointer rounded-md w-[150px] text-center mx-auto mt-10 flex items-center justify-center">
+          <button className="bg-[#C77D01] hover:bg-[#C77D01]/90 text-white p-2 py-3 cursor-pointer rounded-md w-[150px] text-center mx-auto mt-10 flex items-center justify-center">
             Browse Spaces
           </button>
         </div>

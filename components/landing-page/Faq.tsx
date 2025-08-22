@@ -53,11 +53,11 @@ export default function Faq() {
               </div>
               <div>
                 {activeFaq === index ? (
-                  <div className="bg-[#432818] p-1 rounded-full cursor-pointer text-white">
+                  <div className="bg-[#C77D01] p-1 rounded-full cursor-pointer text-white">
                     <ArrowDown className="size-3 md:size-4" />
                   </div>
                 ) : (
-                  <div className="bg-[#432818] p-1 rounded-full cursor-pointer text-white">
+                  <div className="bg-[#C77D01] p-1 rounded-full cursor-pointer text-white">
                     <ArrowUp className="size-3 md:size-4" />
                   </div>
                 )}
@@ -78,7 +78,7 @@ export default function Faq() {
               href="mailto:support@alivehomes.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#C77D01] hover:bg-[#432818] flex items-center justify-between gap-4 p-4 rounded-md cursor-pointer font-medium"
+              className="bg-[#C77D01] hover:bg-[#C77D01]/90 text-white flex items-center justify-between gap-4 p-4 rounded-md cursor-pointer font-medium"
             >
               Send an email
             </a>

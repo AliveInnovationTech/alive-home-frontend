@@ -39,12 +39,6 @@ export default function Hero() {
           >
             Get Started
           </button>
-          <button
-            onClick={() => router.push("/signup")}
-            className="text-gray-900 font-medium hover:underline cursor-pointer"
-          >
-            Log In
-          </button>
         </div>
       </div>
     </section>

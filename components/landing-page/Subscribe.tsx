@@ -5,7 +5,7 @@ export default function Subscribe() {
   return (
     <>
       <section className="bg-[#F4E8E1] px-4 lg:px-6 py-10 md:p-20">
-        <div className="text-center max-w-5xl mx-auto py-10 md:py-20 px-6 border-2 border-white bg-[#C77D01] rounded-xl">
+        <div className="text-center max-w-5xl mx-auto py-10 md:py-20 px-6 text-white border-2 border-white bg-[#C77D01] rounded-xl">
           <h2 className="font-bold text-4xl">Subscribe for our newsletter</h2>
           <p className="text-2xl mt-6 mb-10">
             Get informed of our various offer
@@ -27,7 +27,7 @@ export default function Subscribe() {
                   className="w-[85%] p-3 focus:outline-none text-black placeholder:text-[#8F8F8F] placeholder:text-xs"
                 />
 
-                <button className="bg-[#C77D01] hover:bg-[#C77D01]/90 cursor-pointer flex items-center justify-between w-[150px] px-2  rounded-lg">
+                <button className="bg-[#C77D01] hover:bg-[#C77D01]/90 text-white cursor-pointer flex items-center justify-between w-[150px] px-2  rounded-lg">
                   Subscribe
                   <MoveRight className="hidden md:block" />
                 </button>
