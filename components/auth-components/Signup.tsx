@@ -76,7 +76,7 @@ export default function Signup() {
       toast.success(response?.message || "Registration successful!");
       setTimeout(() => {
         router.push("/login");
-      }, 5000);
+      }, 3000);
     } catch (error: any) {
       toast.error(error?.response?.data?.error || "Registration failed.");
     } finally {
