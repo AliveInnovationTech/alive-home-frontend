@@ -1,9 +1,9 @@
 "use client";
+import BrandLogo from "@/public/assets/alive-home-logo.png";
 import {
   createHomeOwnerRequest,
   uploadDocumentsRequest,
 } from "@/app/services/users-service/homeowner.request";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Input } from "@/components/ui/input";
@@ -18,19 +18,22 @@ import {
 } from "@/components/ui/select";
 import { useState } from "react";
 import { toast } from "sonner";
+import Link from "next/link";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function HomeOwnerConsentForm() {
   const { data: session } = useSession();
   const token = session?.user?.token as string;
   const userId = session?.user?.id as string;
-  
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
     primaryResidence: "",
     ownershipVerified: false,
     preferredContactMethod: "EMAIL",
     verificationDocsUrls: [] as string[],
   });
-
   const [files, setFiles] = useState<File[]>([]);
 
   const handleChange = (field: string, value: any) => {
@@ -80,91 +83,96 @@ export default function HomeOwnerConsentForm() {
         toast.error("Failed to create Profile");
         throw new Error("Failed to create Profile");
       }
-      localStorage.setItem("consentForm", "false");
       toast.success("Profile created successfully!");
-    } catch (err: any) {
-      console.error("Error submitting form:", err);
-      if (err.response?.status === 409) {
-        toast.error(err.response.data?.error || "Profile already exists");
-      } else {
-        toast.error("Failed to create profile. Please try again.");
-      }
+      router.push("/developer");
+    } catch (error: any) {
+      const apiError = error?.response?.data?.error;
+      console.error("Error saving preferences:", apiError || error.message);
+      toast.error(apiError || "Failed to save profile. Please try again.");
     }
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6">
-      <Card className="shadow-lg rounded-2xl">
-        <CardContent className="p-6">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Primary Residence */}
-            <div className="space-y-2">
-              <Label htmlFor="residence">Primary Residence</Label>
-              <Input
-                id="residence"
-                type="text"
-                value={formData.primaryResidence}
-                onChange={(e) =>
-                  handleChange("primaryResidence", e.target.value)
-                }
-              />
-            </div>
+    <div>
+      <Link href="/" className="flex items-center relative w-20 h-10">
+        <Image
+          src={BrandLogo}
+          alt="Alive Homes brand logo"
+          width={100}
+          height={100}
+          priority
+          className="object-contain absolute"
+        />
+      </Link>
+      <div className="max-w-[540px] mx-auto mt-10">
+        <div className="mb-6">
+          <p className="text-[24px] text-[#141414] font-bold">
+            Home Owner Consent Form
+          </p>
+          <p className="text-[#7C8898]">
+            Please provide your Information to complete your profile.
+          </p>
+        </div>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Primary Residence */}
+          <div className="space-y-2">
+            <Label htmlFor="residence">Primary Residence</Label>
+            <Input
+              id="residence"
+              type="text"
+              value={formData.primaryResidence}
+              onChange={(e) => handleChange("primaryResidence", e.target.value)}
+            />
+          </div>
 
-            {/* Ownership Verification */}
-            <div className="flex items-center justify-between">
-              <Label htmlFor="ownership">Ownership Verified</Label>
-              <Switch
-                id="ownership"
-                checked={formData.ownershipVerified}
-                onCheckedChange={(val) =>
-                  handleChange("ownershipVerified", val)
-                }
-              />
-            </div>
+          {/* Ownership Verification */}
+          <div className="flex items-center justify-between">
+            <Label htmlFor="ownership">Ownership Verified</Label>
+            <Switch
+              id="ownership"
+              checked={formData.ownershipVerified}
+              onCheckedChange={(val) => handleChange("ownershipVerified", val)}
+              className="cursor-pointer"
+            />
+          </div>
 
-            {/* Contact Method */}
-            <div className="space-y-2">
-              <Label>Preferred Contact Method</Label>
-              <Select
-                value={formData.preferredContactMethod}
-                onValueChange={(val) =>
-                  handleChange("preferredContactMethod", val)
-                }
-              >
-                <SelectTrigger>
-                  <SelectValue placeholder="Select contact method" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="EMAIL">Email</SelectItem>
-                  <SelectItem value="PHONE">Phone</SelectItem>
-                  <SelectItem value="SMS">SMS</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+          {/* Contact Method */}
+          <div className="space-y-2">
+            <Label>Preferred Contact Method</Label>
+            <Select
+              value={formData.preferredContactMethod}
+              onValueChange={(val) =>
+                handleChange("preferredContactMethod", val)
+              }
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select contact method" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="EMAIL">Email</SelectItem>
+                <SelectItem value="PHONE">Phone</SelectItem>
+                <SelectItem value="SMS">SMS</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
 
-            {/* Upload Verification Docs */}
-            <div className="space-y-2">
-              <Label htmlFor="docs">Verification Documents</Label>
-              <Input
-                id="docs"
-                type="file"
-                multiple
-                onChange={handleFileChange}
-              />
-              {files.length > 0 && (
-                <p className="text-sm text-gray-500">
-                  {files.length} file(s) selected
-                </p>
-              )}
-            </div>
+          {/* Upload Verification Docs */}
+          <div className="space-y-2">
+            <Label htmlFor="docs">Verification Documents</Label>
+            <Input id="docs" type="file" multiple onChange={handleFileChange} />
+            {files.length > 0 && (
+              <p className="text-sm text-gray-500">
+                {files.length} file(s) selected
+              </p>
+            )}
+          </div>
 
-            {/* Submit */}
-            <Button type="submit" className="w-full">
-              Save Homeowner Profile
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
+          {/* Submit */}
+          <Button type="submit" className="w-full cursor-pointer">
+            Save Now
+          </Button>
+        </form>
+      </div>
     </div>
   );
 }

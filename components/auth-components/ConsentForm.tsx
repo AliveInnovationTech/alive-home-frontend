@@ -1,4 +1,6 @@
-// import HomeOwnerConsentForm from "./HomeOwnerConsentForm";
+import HomeOwnerConsentForm from "./HomeOwnerConsentForm";
+import DeveloperConsentForm from "./DeveloperConsentForm";
+import RealtorConsentForm from "./RealtorConsentForm";
 import BuyerConsentForm from "./BuyerConsentForm";
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
@@ -10,13 +12,12 @@ export default async function ConsentForm() {
   if (!token || !role) {
     redirect("/login");
   }
-  console.log("User role is here:", role);
   return (
-    <div className="bg-[#FDFDFD] overflow-y-scroll w-full md:w-1/2 h-full pt-10 pb-20 px-6 lg:px-20">
-      {/* {role === "HOMEOWNER" && <HomeOwnerConsentForm />} */}
+    <div className="md:w-1/2 h-full bg-[#FDFDFD] overflow-y-scroll pt-10 pb-20 px-6 lg:px-20">
+      {role === "HOMEOWNER" && <HomeOwnerConsentForm />}
       {role === "BUYER" && <BuyerConsentForm />}
-      {role === "REALTOR" && <BuyerConsentForm />}
-      {role === "DEVELOPER" && <BuyerConsentForm />}
+      {role === "REALTOR" && <RealtorConsentForm />}
+      {role === "DEVELOPER" && <DeveloperConsentForm />}
     </div>
   );
 }
