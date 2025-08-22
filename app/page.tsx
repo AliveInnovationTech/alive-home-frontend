@@ -1,5 +1,6 @@
 import FeaturedProperties from "@/components/landing-page/FeaturesProperty";
 import PropertyShowcase from "@/components/landing-page/PropertyShowcase";
+import WhyChooseUs from "@/components/landing-page/WhyChooseUs";
 import Subscribe from "@/components/landing-page/Subscribe";
 import Hero from "@/components/landing-page/Hero";
 import Faq from "@/components/landing-page/Faq";
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar />
       <PropertyShowcase />
       <FeaturedProperties />
+      <WhyChooseUs />
       <Faq />
       <Subscribe />
       <Footer />
