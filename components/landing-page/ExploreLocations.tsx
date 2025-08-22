@@ -39,7 +39,7 @@ export default function ExploreLocations() {
                   quality={100}
                   className="relative mt-10 max-w-[282px] h-full sm:w-[282px] sm:h-[460px] md:w-[250px] md:h-[460px] object-cover"
                 />
-                <div className="absolute bottom-10 pl-8 text-left">
+                <div className="absolute bottom-10 pl-8 text-left text-white">
                   <p className="font-semibold">{item.title}</p>
                   <p>{item.locationNumber}</p>
                 </div>
