@@ -63,22 +63,34 @@ export default function LoginHome() {
     setIsLoading(false);
     toast.success("Login Successful");
     const session = await getSession();
-    if (!localStorage.getItem("consentForm")) {
-      localStorage.setItem("consentForm", "true");
-    }
+    const role = session?.user?.role;
+    const user = session?.user;
 
-    // Redirect based on role
-    if (session?.user?.role === "BUYER") {
-      router.push("/buyer");
+    if (
+      (role === "BUYER" && !user?.isBuyerProfileFiled) ||
+      (role === "HOMEOWNER" && !user?.isHomeownerProfileFiled) ||
+      (role === "REALTOR" && !user?.isRealtorProfileFiled) ||
+      (role === "DEVELOPER" && !user?.isDeveloperProfileFiled)
+    ) {
+      router.push("/consent-form");
       router.refresh();
-    } else if (session?.user?.role === "HOMEOWNER") {
-      router.push("/homeowner");
-      router.refresh();
-    } else if (session?.user?.role === "REALTOR") {
-      router.push("/realtor");
-      router.refresh();
-    } else if (session?.user?.role === "DEVELOPER") {
-      router.push("/developer");
+    } else {
+      switch (role) {
+        case "BUYER":
+          router.push("/buyer");
+          break;
+        case "HOMEOWNER":
+          router.push("/homeowner");
+          break;
+        case "REALTOR":
+          router.push("/realtor");
+          break;
+        case "DEVELOPER":
+          router.push("/developer");
+          break;
+        default:
+          router.push("/not-found");
+      }
       router.refresh();
     }
   };
