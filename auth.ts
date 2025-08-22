@@ -59,6 +59,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
               phoneNumber: user.phoneNumber,
               role: user.role?.name,
               token: result.data.token,
+              isBuyerProfileFiled: user.isBuyerProfileFiled,
+              isDeveloperProfileFiled: user.isDeveloperProfileFiled,
+              isRealtorProfileFiled: user.isRealtorProfileFiled,
+              isHomeownerProfileFiled: user.isHomeownerProfileFiled,
             };
           }
           throw new Error(result.message || "Invalid credentials");
@@ -146,6 +150,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             email: user.email,
             role: user.role,
             token: user.token,
+            isHomeownerProfileFiled: user.isHomeownerProfileFiled,
+            isRealtorProfileFiled: user.isRealtorProfileFiled,
+            isBuyerProfileFiled: user.isBuyerProfileFiled,
+            isDeveloperProfileFiled: user.isDeveloperProfileFiled,
           };
         }
       }
@@ -157,6 +165,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         session.user.email = token.email as string;
         session.user.role = token.role as string;
         session.user.token = token.token as string;
+        session.user.isHomeownerProfileFiled = token.isHomeownerProfileFiled as boolean;
+        session.user.isRealtorProfileFiled = token.isRealtorProfileFiled as boolean;
+        session.user.isBuyerProfileFiled = token.isBuyerProfileFiled as boolean;
+        session.user.isDeveloperProfileFiled = token.isDeveloperProfileFiled as boolean;
       }
       return session;
     },
