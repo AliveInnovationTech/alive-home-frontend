@@ -8,11 +8,11 @@ export default function Faq() {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
 
   return (
-    <div className="px-4 py-10 pb-20 lg:px-6 lg:py-20 lg:pt-14 lg:pb-32 bg-[#F8F8F8]">
-      <div className="text-center max-w-sm md:max-w-[700px] mx-auto">
-        <p className="font-bold text-xl md:text-4xl px-6 lg:px-10 text-[#161616]">
+    <div className="px-4 py-14 pb-20 lg:px-6 lg:py-20 lg:pb-32 bg-[#F8F8F8]">
+      <div className="text-center max-w-sm md:max-w-[750px] mx-auto">
+        <h2 className="font-bold text-4xl md:text-5xl px-6 lg:px-10 bg-gradient-to-r from-[#C77D01] to-[#565248] bg-clip-text text-transparent leading-tight">
           Frequently Asked Questions (FAQs)
-        </p>
+        </h2>
         <p className="font-medium md:font-semibold text-2xl mt-3 text-[#4A4A4A]">
           Any questions? We got you.
         </p>
