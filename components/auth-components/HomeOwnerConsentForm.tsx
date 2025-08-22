@@ -9,6 +9,7 @@ import { Switch } from "@/components/ui/switch";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import {
   Select,
   SelectTrigger,
@@ -20,7 +21,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { Loader2 } from "lucide-react";
 
 export default function HomeOwnerConsentForm() {
   const { data: session } = useSession();
@@ -35,6 +36,7 @@ export default function HomeOwnerConsentForm() {
     verificationDocsUrls: [] as string[],
   });
   const [files, setFiles] = useState<File[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (field: string, value: any) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -48,6 +50,7 @@ export default function HomeOwnerConsentForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
       let uploadedUrls: string[] = [];
       if (files.length > 0) {
@@ -89,6 +92,8 @@ export default function HomeOwnerConsentForm() {
       const apiError = error?.response?.data?.error;
       console.error("Error saving preferences:", apiError || error.message);
       toast.error(apiError || "Failed to save profile. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -168,8 +173,18 @@ export default function HomeOwnerConsentForm() {
           </div>
 
           {/* Submit */}
-          <Button type="submit" className="w-full cursor-pointer">
-            Save Now
+          <Button
+            type="submit"
+            className="w-full cursor-pointer"
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <span className="flex items-center justify-center gap-2">
+                <Loader2 className="h-4 w-4 animate-spin" /> Saving...
+              </span>
+            ) : (
+              "Save Now"
+            )}
           </Button>
         </form>
       </div>

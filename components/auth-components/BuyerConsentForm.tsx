@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { Loader2 } from "lucide-react";
 import { useState } from "react";
 import {
   Select,
@@ -24,6 +25,7 @@ export default function BuyerConsentForm() {
   const token = session?.user?.token as string;
   const userId = session?.user?.id as string;
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     minimumBudget: "",
@@ -40,6 +42,7 @@ export default function BuyerConsentForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
       const payload = { ...formData, userId };
       await createBuyerRequest(payload, token);
@@ -49,6 +52,8 @@ export default function BuyerConsentForm() {
       const apiError = error?.response?.data?.error;
       console.error("Error saving preferences:", apiError || error.message);
       toast.error(apiError || "Failed to save profile. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -161,8 +166,18 @@ export default function BuyerConsentForm() {
             </Select>
           </div>
           {/* Submit */}
-          <Button type="submit" className="w-full cursor-pointer">
-            Save Now
+          <Button
+            type="submit"
+            className="w-full cursor-pointer"
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <span className="flex items-center justify-center gap-2">
+                <Loader2 className="h-4 w-4 animate-spin" /> Saving...
+              </span>
+            ) : (
+              "Save Now"
+            )}
           </Button>
         </form>
       </div>

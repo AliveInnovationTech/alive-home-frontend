@@ -10,12 +10,14 @@ import { useState } from "react";
 import { toast } from "sonner";
 import Link from "next/link";
 import Image from "next/image";
+import { Loader2 } from "lucide-react";
 
 export default function DeveloperConsentForm() {
   const { data: session } = useSession();
   const token = session?.user?.token as string;
   const userId = session?.user?.id as string;
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     companyName: "",
@@ -40,6 +42,7 @@ export default function DeveloperConsentForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
       const formDataUpload = new FormData();
       formDataUpload.append("userId", userId);
@@ -71,6 +74,8 @@ export default function DeveloperConsentForm() {
     } catch (error: any) {
       const apiError = error?.response?.data?.error;
       toast.error(apiError || "Failed to save profile. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -181,8 +186,18 @@ export default function DeveloperConsentForm() {
           </div>
 
           {/* Submit */}
-          <Button type="submit" className="w-full p-4 cursor-pointer">
-            Save Now
+          <Button
+            type="submit"
+            className="w-full p-4 cursor-pointer"
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <span className="flex items-center justify-center gap-2">
+                <Loader2 className="h-4 w-4 animate-spin" /> Saving...
+              </span>
+            ) : (
+              "Save Now"
+            )}
           </Button>
         </form>
       </div>

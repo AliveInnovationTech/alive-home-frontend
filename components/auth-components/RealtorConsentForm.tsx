@@ -11,6 +11,7 @@ import {
   uploadDocumentsRequest,
 } from "@/app/services/users-service/realtor.request";
 import { useRouter } from "next/navigation";
+import { Loader2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -31,6 +32,7 @@ export default function RealtorConsentForm() {
   const [files, setFiles] = useState<File[]>([]);
   const [specialtyInput, setSpecialtyInput] = useState("");
   const [certInput, setCertInput] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (field: string, value: any) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -64,6 +66,7 @@ export default function RealtorConsentForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
       let uploadedUrls: string[] = [];
       if (files.length > 0) {
@@ -102,6 +105,8 @@ export default function RealtorConsentForm() {
     } catch (error: any) {
       const apiError = error?.response?.data?.error;
       toast.error(apiError || "Failed to save profile. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -229,8 +234,18 @@ export default function RealtorConsentForm() {
           </div>
 
           {/* Submit */}
-          <Button type="submit" className="w-full cursor-pointer">
-            Save Realtor Profile
+          <Button
+            type="submit"
+            className="w-full cursor-pointer"
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <span className="flex items-center justify-center gap-2">
+                <Loader2 className="h-4 w-4 animate-spin" /> Saving...
+              </span>
+            ) : (
+              "Save Now"
+            )}
           </Button>
         </form>
       </div>
