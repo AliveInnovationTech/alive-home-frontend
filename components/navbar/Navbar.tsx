@@ -1,19 +1,20 @@
 "use client";
-import { ThemeToggle } from "@/components/theme-toggle/ThemeToggle";
-import { motion, AnimatePresence } from "framer-motion";
 import BrandLogo from "@/public/assets/alive-home-logo.png";
-import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import { IoSparklesSharp } from "react-icons/io5";
 import { HiMenu, HiX } from "react-icons/hi";
-import { FaQ } from "react-icons/fa6";
+import Chatbot from "../chatbot/ChatBot";
+import { Modal } from "../modals/Modal";
+import { Landmark } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const routes = [
   {
-    name: "FAQs",
+    name: "Market Place",
     href: "faq-id",
-    icon: FaQ,
+    icon: Landmark,
   },
 ];
 
@@ -34,13 +35,17 @@ const mobileRoutes = [
 
 export default function Navbar() {
   const [dropNav, setDropNav] = useState(false);
-  const pathname = usePathname();
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   const handleSmoothScroll = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+  };
+
+  const toggleChat = () => {
+    setIsChatOpen(!isChatOpen);
   };
 
   return (
@@ -64,26 +69,28 @@ export default function Navbar() {
             className="items-center justify-between hidden w-full lg:flex lg:w-auto"
             id="navbar-sticky"
           >
-            <ul
-              className={`${
-                pathname !== "/blog" && ""
-              } p-2 md:p-0 mt-2 text-[#000000] font-medium rounded-lg md:space-x-5 lg:space-x-8 md:mt-0 md:border-0 hidden md:flex flex-row`}
+            <p
+              onClick={() => toggleChat()}
+              className="bg-[#F2F6F6] border-[#014751] px-3 py-1.5 font-medium cursor-pointer rounded-md mx-4 hover:text-[#014751] hidden lg:flex items-center gap-3"
             >
-              {pathname !== "/blog" &&
-                routes.map((route, index) => {
-                  const Icon = route.icon;
-                  return (
-                    <li
-                      key={index}
-                      className="relative flex items-center gap-2 w-fit px-2.5 py-1.5 rounded-lg group cursor-pointer"
-                      onClick={() => handleSmoothScroll(`${route.href}`)}
-                    >
-                      <Icon className="size-4" />
-                      <span className="cursor-pointer">{route.name}</span>
-                      <span className="absolute left-0 -bottom-0.5 h-0.5 w-full scale-x-0 bg-muted-foreground origin-left transition-transform duration-200 group-hover:scale-x-100" />
-                    </li>
-                  );
-                })}
+              <IoSparklesSharp size={18} className="blink-animation" />{" "}
+              <span>Ask AI</span>
+            </p>
+            <ul className="p-2 md:p-0 mt-2 text-[#000000] font-medium rounded-lg md:space-x-5 lg:space-x-8 md:mt-0 md:border-0 hidden md:flex flex-row">
+              {routes.map((route, index) => {
+                const Icon = route.icon;
+                return (
+                  <li
+                    key={index}
+                    className="relative hover:text-[#C77D01] flex items-center gap-2 w-fit px-2.5 py-1.5 rounded-lg group cursor-pointer"
+                    onClick={() => handleSmoothScroll(`${route.href}`)}
+                  >
+                    <Icon className="size-4" />
+                    <span className="cursor-pointer">{route.name}</span>
+                    <span className="absolute left-0 -bottom-0.5 h-0.5 w-full scale-x-0 bg-muted-foreground origin-left transition-transform duration-200 group-hover:scale-x-100" />
+                  </li>
+                );
+              })}
             </ul>
             {/* ======== Login & Sign Up ====== */}
             <Link
@@ -113,7 +120,6 @@ export default function Navbar() {
 
           {!dropNav && (
             <div className="flex items-center gap-4 lg:hidden">
-              <ThemeToggle />
               <div className="flex lg:hidden bg-[#F2F6F6] dark:bg-secondary dark:border-muted-foreground dark:border-[0.1px]   border border-slate-200 p-2 rounded-lg">
                 <HiMenu
                   className="text-lg transition text-[#C77D01] dark:text-secondary-foreground"
@@ -174,6 +180,11 @@ export default function Navbar() {
           </AnimatePresence>
         </section>
       </nav>
+
+      {/* === MODALS === */}
+      <Modal show={isChatOpen} onClose={() => setIsChatOpen(false)}>
+        <Chatbot toggleChat={toggleChat} />
+      </Modal>
     </>
   );
 }
