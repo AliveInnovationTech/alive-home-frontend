@@ -13,7 +13,7 @@ import Link from "next/link";
 const routes = [
   {
     name: "Market Place",
-    href: "faq-id",
+    href: "market-id",
     icon: Landmark,
   },
 ];
@@ -28,8 +28,8 @@ const mobileRoutes = [
     href: "/signup",
   },
   {
-    name: "Blog",
-    href: "/blog",
+    name: "Market Place",
+    href: "#",
   },
 ];
 
@@ -142,19 +142,19 @@ export default function Navbar() {
                 animate={{ x: 0 }}
                 exit={{ x: "90vw" }}
                 transition={{ type: "tween", duration: 1 }}
-                className="fixed top-0 right-0 w-[80%] min-h-screen z-30 bg-[#F6F8FD] bg-slate-200"
+                className="fixed top-0 right-0 w-[80%] min-h-screen z-30 bg-[#F8F8F8]"
               >
                 <div className="flex justify-between p-3 pr-6">
-                  <a href="#" className="flex items-center">
+                  <span className="flex items-center relative w-20 h-10">
                     <Image
                       src={BrandLogo}
                       alt="Alive Home brand logo"
                       width={100}
                       height={100}
                       priority
-                      className="object-cover w-[144px] h-[23.28px]"
+                      className="object-contain absolute"
                     />
-                  </a>
+                  </span>
                   <HiX
                     className="text-lg transition mt-2 text-[#C77D01] dark:text-secondary-foreground"
                     size={32}
@@ -180,6 +180,19 @@ export default function Navbar() {
           </AnimatePresence>
         </section>
       </nav>
+      <div
+        onClick={() => toggleChat()}
+        className="bg-[#ffffff] border-[0.5px] border-slate-200 text-black p-2  px-3.5 h-fit w-fit flex justify-center items-center gap-2 rounded-3xl font-normal  fixed bottom-10 right-4 z-[999] lg:hidden animate-bounce"
+      >
+        <div className="bg-[#019734] p-2 rounded-full flex items-center w-8 h-8">
+          <IoSparklesSharp
+            color="#FFFFFF"
+            size={24}
+            className="blink-animation"
+          />
+        </div>
+        Ask AI
+      </div>
 
       {/* === MODALS === */}
       <Modal show={isChatOpen} onClose={() => setIsChatOpen(false)}>
