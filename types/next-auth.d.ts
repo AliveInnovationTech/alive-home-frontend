@@ -11,6 +11,10 @@ declare module "next-auth" {
     token?: string;
     picture?: string;
     sub?: string;
+    isBuyerProfileFiled?: boolean;
+    isDeveloperProfileFiled?: boolean;
+    isRealtorProfileFiled?: boolean;
+    isHomeownerProfileFiled?: boolean;
   }
 
   interface Session {
@@ -22,6 +26,10 @@ declare module "next-auth" {
       role?: string;
       token?: string;
       picture?: string;
+      isBuyerProfileFiled?: boolean;
+      isDeveloperProfileFiled?: boolean;
+      isRealtorProfileFiled?: boolean;
+      isHomeownerProfileFiled?: boolean;
     };
   }
 }
@@ -33,5 +41,9 @@ declare module "next-auth/jwt" {
     email?: string;
     token?: string;
     picture?: string;
+    isBuyerProfileFiled?: boolean;
+    isDeveloperProfileFiled?: boolean;
+    isRealtorProfileFiled?: boolean;
+    isHomeownerProfileFiled?: boolean;
   }
 }
