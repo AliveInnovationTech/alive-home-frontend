@@ -156,7 +156,7 @@ export default function BuyerConsentForm() {
                 <SelectItem value="HOUSE">House</SelectItem>
                 <SelectItem value="CONDO">Condo</SelectItem>
                 <SelectItem value="TOWNHOUSE">Town House</SelectItem>
-                <SelectItem value="SINGLE_FAMILYY">Single Family</SelectItem>
+                <SelectItem value="SINGLE_FAMILY">Single Family</SelectItem>
                 <SelectItem value="MULTI_FAMILY">Multi Family</SelectItem>
                 <SelectItem value="APARTMENT">Apartment</SelectItem>
                 <SelectItem value="COMMERCIAL">Commercial</SelectItem>

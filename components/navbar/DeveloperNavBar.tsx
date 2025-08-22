@@ -53,7 +53,7 @@ export default function DeveloperNavBar({ session }: { session: any }) {
         <div className="flex justify-between items-center lg:block">
           <div className="lg:flex justify-between items-center">
             <div className="flex items-center">
-              <div onClick={() => router.back()} className="">
+              <div onClick={() => router.push("/")} className="cursor-pointer">
                 <span className="flex items-center relative w-20 h-10">
                   <Image
                     src={BrandLogo}

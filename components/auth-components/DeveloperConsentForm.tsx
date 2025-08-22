@@ -69,7 +69,7 @@ export default function DeveloperConsentForm() {
         toast.error("Failed to create Profile");
         throw new Error("Failed to create Profile");
       }
-      toast.success("Developer profile created successfully!");
+      toast.success("Profile created successfully!");
       router.push("/developer");
     } catch (error: any) {
       const apiError = error?.response?.data?.error;

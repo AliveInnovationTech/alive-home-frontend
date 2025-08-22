@@ -1,17 +1,14 @@
 "use client";
+import { createRealtorRequest } from "@/app/services/users-service/realtor.request";
 import BrandLogo from "@/public/assets/alive-home-logo.png";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useSession } from "next-auth/react";
-import { useState } from "react";
-import { toast } from "sonner";
-import {
-  createRealtorRequest,
-  uploadDocumentsRequest,
-} from "@/app/services/users-service/realtor.request";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -29,19 +26,12 @@ export default function RealtorConsentForm() {
     certifications: [] as string[],
     verificationDocsUrls: [] as string[],
   });
-  const [files, setFiles] = useState<File[]>([]);
   const [specialtyInput, setSpecialtyInput] = useState("");
   const [certInput, setCertInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (field: string, value: any) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      setFiles(Array.from(e.target.files));
-    }
   };
 
   const addSpecialty = () => {
@@ -68,29 +58,10 @@ export default function RealtorConsentForm() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      let uploadedUrls: string[] = [];
-      if (files.length > 0) {
-        const formDataUpload = new FormData();
-        files.forEach((file) =>
-          formDataUpload.append("verificationDocsUrls", file)
-        );
-
-        const response = await uploadDocumentsRequest(
-          formDataUpload,
-          token,
-          userId
-        );
-        if (!response) {
-          toast.error("Failed to upload documents");
-          throw new Error("Failed to upload documents");
-        }
-        uploadedUrls = response.map((doc: any) => doc.url);
-      }
-
       const payload = {
         ...formData,
         yearsOfExperience: Number(formData.yearsOfExperience),
-        verificationDocsUrls: uploadedUrls,
+        verificationDocsUrls: [],
         userId,
       };
       const response = await createRealtorRequest(payload, token);
@@ -220,17 +191,6 @@ export default function RealtorConsentForm() {
                 </span>
               ))}
             </div>
-          </div>
-
-          {/* Upload Verification Docs */}
-          <div className="space-y-2">
-            <Label htmlFor="docs">Verification Documents</Label>
-            <Input id="docs" type="file" multiple onChange={handleFileChange} />
-            {files.length > 0 && (
-              <p className="text-sm text-gray-500">
-                {files.length} file(s) selected
-              </p>
-            )}
           </div>
 
           {/* Submit */}

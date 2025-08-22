@@ -1,11 +1,10 @@
-// import JobHome from "@/app/components/job-listings/JobHome";
+import PropertySearch from "@/components/molecules/PropertySearch";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { auth } from "@/auth";
-import PropertySearch from "@/components/molecules/PropertySearch";
 
 export const metadata: Metadata = {
-  title: "Jobs | Alive homes ai",
+  title: "Property | Alive homes ai",
   description: "Alive homes AI - AI-driven real estate technology platform",
 };
 export default async function JobsPage() {
@@ -21,9 +20,6 @@ export default async function JobsPage() {
         <p className="text-2xl font-bold mb-2">Buyer Property Search</p>
         <p className="text-gray-500">Manage the Property of here</p>
       </div>
-      {/* <section className="h-fit border mt-8 p-6 rounded-md">
-       <Jobs token={token} userId={userId} />
-     </section> */}
       <PropertySearch />
     </main>
   );

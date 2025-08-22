@@ -1,28 +1,29 @@
+import PropertySearch from "@/components/molecules/PropertySearch";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { auth } from "@/auth";
-import SavedProperties from "@/components/molecules/SavedProperties";
 
 export const metadata: Metadata = {
-  title: "Saved Property | Alive Homes",
+  title: "Property | Alive homes ai",
   description: "Alive homes AI - AI-driven real estate technology platform",
 };
-export default async function TestPage() {
+export default async function JobsPage() {
   const session = await auth();
   const token = session?.user?.token;
   const userId = session?.user?.id;
   if (!session?.user || !token || !userId) {
     redirect("/login");
   }
-
   return (
     <main className="min-h-screen p-6 pt-24 lg:p-12 xl:p-20 lg:pt-32 xl:pt-32 font-sans text-md">
       <div className="w-full font-sans text-md ">
-        <p className="text-2xl font-bold mb-2">Realtor Saved Properties</p>
-        <p className="text-gray-500">Manage the saved properties here</p>
+        <p className="text-2xl font-bold mb-2">Realtor Property Management</p>
+        <p className="text-gray-500">Manage the Property Management of here</p>
       </div>
-
-      <SavedProperties />
+      {/* <section className="h-fit border mt-8 p-6 rounded-md">
+       <Jobs token={token} userId={userId} />
+     </section> */}
+      <PropertySearch />
     </main>
   );
 }

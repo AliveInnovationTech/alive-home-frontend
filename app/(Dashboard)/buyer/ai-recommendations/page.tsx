@@ -1,10 +1,9 @@
-import SavedProperties from "@/components/molecules/SavedProperties";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { auth } from "@/auth";
 
 export const metadata: Metadata = {
-  title: "Saved Property | Alive Homes",
+  title: "Ai recommendation | Alive Homes",
   description: "Alive homes AI - AI-driven real estate technology platform",
 };
 export default async function TestPage() {
@@ -18,11 +17,9 @@ export default async function TestPage() {
   return (
     <main className="min-h-screen p-6 pt-24 lg:p-12 xl:p-20 lg:pt-32 xl:pt-32 font-sans text-md">
       <div className="w-full font-sans text-md ">
-        <p className="text-2xl font-bold mb-2">Buyer Saved Properties</p>
-        <p className="text-gray-500">Manage the saved properties here</p>
+        <p className="text-2xl font-bold mb-2">AI Recommendations</p>
+        <p className="text-gray-500">Manage the saved Recommendation here</p>
       </div>
-
-      <SavedProperties />
     </main>
   );
 }

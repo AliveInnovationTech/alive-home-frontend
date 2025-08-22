@@ -9,9 +9,15 @@ import {
   ShieldMinus,
   User,
   Contact,
+  Upload,
+  CalendarCheck,
+  ChartNoAxesCombined,
+  Landmark,
+  UploadCloud,
 } from "lucide-react";
-import { GoHome } from "react-icons/go";
+import { IoSparklesSharp } from "react-icons/io5";
 import { MdOutlinePayment } from "react-icons/md";
+import { GoHome } from "react-icons/go";
 
 export const realtorNavItems = [
   {
@@ -20,19 +26,19 @@ export const realtorNavItems = [
     icon: LayoutGrid,
   },
   {
-    name: "Message",
-    href: "/realtor/message",
-    icon: MessageCircle,
+    name: "Document Upload",
+    href: "/realtor/document-upload",
+    icon: UploadCloud,
   },
   {
-    name: "Property Search",
-    href: "/realtor/property-search",
+    name: "Property Management",
+    href: "/realtor/property-management",
     icon: BriefcaseBusiness,
   },
   {
-    name: "Saved Properties",
-    href: "/realtor/saved-properties",
-    icon: Award,
+    name: "Analytics",
+    href: "/realtor/analytics",
+    icon: ChartNoAxesCombined,
   },
   {
     name: "Notifications",
@@ -85,6 +91,16 @@ export const buyerNavItems = [
     icon: Award,
   },
   {
+    name: "Ai Recommendations",
+    href: "/buyer/ai-recommendations",
+    icon: IoSparklesSharp,
+  },
+  {
+    name: "Appointments",
+    href: "/buyer/appointments",
+    icon: CalendarCheck,
+  },
+  {
     name: "Notifications",
     href: "/buyer/notifications",
     icon: CreditCard,
@@ -115,24 +131,24 @@ export const buyerNavItems = [
 
 export const homeOwnerNavItems = [
   {
-    name: "Dashboard",
+    name: "Overview",
     href: "/homeowner",
-    icon: LayoutGrid,
+    icon: ChartNoAxesCombined,
   },
   {
-    name: "Message",
+    name: "Upload Documents",
     href: "/homeowner/message",
-    icon: MessageCircle,
+    icon: Upload,
   },
   {
-    name: "Property Search",
+    name: "Property",
     href: "/homeowner/property-search",
     icon: BriefcaseBusiness,
   },
   {
-    name: "Saved Properties",
+    name: "Appointments",
     href: "/homeowner/saved-properties",
-    icon: Award,
+    icon: CalendarCheck,
   },
   {
     name: "Notifications",
@@ -165,23 +181,23 @@ export const homeOwnerNavItems = [
 
 export const developerNavItems = [
   {
-    name: "Dashboard",
+    name: "Analytics",
     href: "/developer",
-    icon: LayoutGrid,
+    icon: ChartNoAxesCombined,
   },
   {
-    name: "Message",
-    href: "/developer/message",
-    icon: MessageCircle,
+    name: "Projects",
+    href: "/developer/projects",
+    icon: Landmark,
   },
   {
-    name: "Property Search",
+    name: "Property",
     href: "/developer/property-search",
     icon: BriefcaseBusiness,
   },
   {
-    name: "Saved Properties",
-    href: "/developer/saved-properties",
+    name: "Market Insights",
+    href: "/developer/market-insights",
     icon: Award,
   },
   {

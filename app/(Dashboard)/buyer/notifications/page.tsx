@@ -1,8 +1,7 @@
-// import Notification from "@/app/components/student-components/Notifications";
+import Trash from "@/components/trash/Trash";
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
 import { auth } from "@/auth";
-import Trash from "@/components/trash/Trash";
 
 export const metadata: Metadata = {
   title: "Notifications | Alive Homes",
