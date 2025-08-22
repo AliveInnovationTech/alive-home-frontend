@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="flex items-center relative w-20 h-20 md:w-40 md:h-40">
             <Image
               src={BrandLogo}
-              alt="Alive Homes brand logo"
+              alt="Alive Home brand logo"
               width={200}
               height={200}
               priority

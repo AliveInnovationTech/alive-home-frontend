@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 import { auth } from "@/auth";
 
 export const metadata: Metadata = {
-  title: "Saved Property | Alive Homes",
-  description: "Alive homes AI - AI-driven real estate technology platform",
+  title: "Saved Property | Alive Home",
+  description: "Alive Home AI - AI-driven real estate technology platform",
 };
 export default async function TestPage() {
   const session = await auth();

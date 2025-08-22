@@ -57,7 +57,7 @@ export default function RealtorNavBar({ session }: { session: any }) {
                 <span className="flex items-center relative w-20 h-10">
                   <Image
                     src={BrandLogo}
-                    alt="Alive Homes brand logo"
+                    alt="Alive Home brand logo"
                     width={100}
                     height={100}
                     priority
@@ -67,7 +67,7 @@ export default function RealtorNavBar({ session }: { session: any }) {
               </div>
               <div className="border-l border-slate-300 pl-3 ml-3 space-y-3 hidden md:inline-block">
                 <p className="text-xs font-light">
-                  Hi {userProfileData?.basicInfo?.firstName ?? "Alive Homes"}
+                  Hi {userProfileData?.basicInfo?.firstName ?? "Alive Home"}
                 </p>
                 <p>Welcome 👋</p>
               </div>
@@ -176,7 +176,7 @@ export default function RealtorNavBar({ session }: { session: any }) {
                   <a href="#" className="flex items-center relative w-20 h-10">
                     <Image
                       src={BrandLogo}
-                      alt="Alive Homes brand logo"
+                      alt="Alive Home brand logo"
                       width={100}
                       height={100}
                       priority

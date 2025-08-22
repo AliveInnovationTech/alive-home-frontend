@@ -5,11 +5,11 @@ import type { Metadata } from "next";
 import { auth } from "@/auth";
 import BuyerNavBar from "@/components/navbar/BuyerNavBar";
 
-const APP_NAME = "Alive homes ai";
-const APP_DEFAULT_TITLE = "Alive homes ai";
-const APP_TITLE_TEMPLATE = "%s - Alive homes ai";
+const APP_NAME = "Alive Home ai";
+const APP_DEFAULT_TITLE = "Alive Home ai";
+const APP_TITLE_TEMPLATE = "%s - Alive Home ai";
 const APP_DESCRIPTION =
-  "Alive homes AI - AI-driven real estate technology platform";
+  "Alive Home AI - AI-driven real estate technology platform";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

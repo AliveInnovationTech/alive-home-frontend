@@ -5,8 +5,8 @@ import { auth } from "@/auth";
 import PropertySearch from "@/components/molecules/PropertySearch";
 
 export const metadata: Metadata = {
-  title: "Jobs | Alive homes ai",
-  description: "Alive homes AI - AI-driven real estate technology platform",
+  title: "Jobs | Alive Home ai",
+  description: "Alive Home AI - AI-driven real estate technology platform",
 };
 export default async function JobsPage() {
   const session = await auth();

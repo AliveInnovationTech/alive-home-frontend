@@ -4,8 +4,8 @@ import { auth } from "@/auth";
 import Trash from "@/components/trash/Trash";
 
 export const metadata: Metadata = {
-  title: "Security | Alive homes ai",
-  description: "Alive homes AI - AI-driven real estate technology platform",
+  title: "Security | Alive Home ai",
+  description: "Alive Home AI - AI-driven real estate technology platform",
 };
 export default async function SecurityPage() {
   const session = await auth();

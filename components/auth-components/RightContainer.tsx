@@ -8,7 +8,7 @@ export default function RightContainer() {
       <div>
         <Image
           src={BrandLogo}
-          alt="Alive Homes ai brand logo"
+          alt="Alive Home ai brand logo"
           width={100}
           height={100}
           priority

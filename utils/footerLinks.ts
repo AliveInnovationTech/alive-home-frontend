@@ -31,8 +31,8 @@ export const FooterList = [
     headings: "More Support?",
     subHeadings: [
       "Visit the Help Center",
-      "support@alivehomes.com",
-      "info@alivehomes.com",
+      "support@aliveHome.com",
+      "info@aliveHome.com",
     ],
     imageUrl: [PlayStore, AppleStore],
   },

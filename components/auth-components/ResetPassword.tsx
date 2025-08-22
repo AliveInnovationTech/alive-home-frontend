@@ -73,7 +73,7 @@ export default function ResetPassword({ token, userId }: ResetPasswordProps) {
         <Link href="/" className="flex items-center relative w-20 h-10">
           <Image
             src={BrandLogo}
-            alt="Alive Homes brand logo"
+            alt="Alive Home brand logo"
             width={100}
             height={100}
             priority

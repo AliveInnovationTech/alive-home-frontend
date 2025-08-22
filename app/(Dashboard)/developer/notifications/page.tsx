@@ -5,8 +5,8 @@ import { auth } from "@/auth";
 import Trash from "@/components/trash/Trash";
 
 export const metadata: Metadata = {
-  title: "Notifications | Alive Homes",
-  description: "Alive Homes - AI-driven real estate technology platform",
+  title: "Notifications | Alive Home",
+  description: "Alive Home - AI-driven real estate technology platform",
 };
 
 export default async function NotificationPage() {

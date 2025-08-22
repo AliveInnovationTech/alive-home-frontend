@@ -1,6 +1,6 @@
 <div align="center">
-<h1>Alive Homes Application</h1>
-<h6><i>Manage your Client with Alive Homes Application</i></h6>
+<h1>Alive Home Application</h1>
+<h6><i>Manage your Client with Alive Home Application</i></h6>
 <hr />
 </div>
 
@@ -47,11 +47,11 @@ Create a `.env` file in the project root:
 # Site Information (Optional)
 NODE_ENV="development"
 NEXT_PUBLIC_BASEURL="backendurl goes here"
-NEXT_PUBLIC_APP_URL=https://www.alivehomes.vercel.app
+NEXT_PUBLIC_APP_URL=https://www.aliveHome.vercel.app
 
 # Next-Auth Config
 NEXTAUTH_SECRET=your_nextauth_secrete
-NEXTAUTH_URL=https://www.alivehomes.vercel.app
+NEXTAUTH_URL=https://www.aliveHome.vercel.app
 NEXTAUTH_DEBUG=true
 
 

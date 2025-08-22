@@ -75,7 +75,7 @@ export default function Faq() {
           </p>
           <div>
             <a
-              href="mailto:support@alivehomes.com"
+              href="mailto:support@aliveHome.com"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#C77D01] hover:bg-[#C77D01]/90 text-white flex items-center justify-between gap-4 p-4 rounded-md cursor-pointer font-medium"
