@@ -1,6 +1,6 @@
-import ExploreLocations from "@/components/landing-page/ExploreLocations";
+import FeaturedProperties from "@/components/landing-page/FeaturesProperty";
+import PropertyShowcase from "@/components/landing-page/PropertyShowcase";
 import Subscribe from "@/components/landing-page/Subscribe";
-import Process from "@/components/landing-page/Process";
 import Hero from "@/components/landing-page/Hero";
 import Faq from "@/components/landing-page/Faq";
 import Footer from "@/components/footer/Footer";
@@ -11,8 +11,8 @@ export default function Home() {
     <div className="min-h-screen gap-16 font-[family-name:var(--font-geist-sans)]">
       <Hero />
       <Navbar />
-      <ExploreLocations />
-      <Process />
+      <PropertyShowcase />
+      <FeaturedProperties />
       <Faq />
       <Subscribe />
       <Footer />

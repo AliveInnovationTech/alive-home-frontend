@@ -1,4 +1,3 @@
-// import CustomButton from "@/app/components/CustomButton";
 import { MoveRight } from "lucide-react";
 
 export default function Subscribe() {

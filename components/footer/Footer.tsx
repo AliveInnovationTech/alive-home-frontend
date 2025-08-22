@@ -1,12 +1,22 @@
+import BrandLogo from "@/public/assets/alive-home-logo.png";
 import { FooterList } from "@/utils/footerLinks";
 import Image from "next/image";
 
 export default function Footer() {
   return (
     <>
-      <section className="bg-[#C77D01] px-4 lg:px-6 py-20">
+      <section className="bg-[#C77D01] px-4 lg:px-6 py-10">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-bold text-4xl">Alive Homes</h2>
+          <div className="flex items-center relative w-20 h-20 md:w-40 md:h-40">
+            <Image
+              src={BrandLogo}
+              alt="Alive Homes brand logo"
+              width={200}
+              height={200}
+              priority
+              className="object-contain w-[200px] h-[200px] md:w-[400px] md:h-[400px] absolute"
+            />
+          </div>
           <p className="mt-4 md:mt-8 lg:mt-10 mb-4 text-xs text-white md:text-sm xl:text-base leading-6">
             Alive Home is an AI-driven real estate technology platform that
             leverages proximity-based services, geotechnology, and interactive

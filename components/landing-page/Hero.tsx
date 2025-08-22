@@ -1,7 +1,7 @@
 "use client";
-import Image from "next/image";
 import HeroImage from "@/public/assets/realestate.png";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function Hero() {
   const router = useRouter();
