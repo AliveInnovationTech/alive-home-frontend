@@ -9,9 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ai-sdk/google": "^2.0.8",
-    "@ai-sdk/openai": "^2.0.19",
-    "@ai-sdk/react": "^2.0.22",
+    "@ai-sdk/google": "^1.1.1",
+    "@ai-sdk/openai": "^1.1.1",
     "@hookform/resolvers": "^5.2.1",
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-select": "^2.2.6",
@@ -20,7 +19,7 @@
     "@tanstack/react-query": "^5.85.5",
     "@tanstack/react-query-devtools": "^5.85.5",
     "@tanstack/react-table": "^8.21.3",
-    "ai": "^5.0.22",
+    "ai": "^4.1.1",
     "axios": "^1.11.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
