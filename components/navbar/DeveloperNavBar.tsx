@@ -75,7 +75,7 @@ export default function DeveloperNavBar({ session }: { session: any }) {
             <div className="hidden lg:flex items-center gap-x-2 text-sm md:text-base cursor-pointer font-light w-fit">
               <div className="flex items-center space-x-3 ml-4">
                 <Link
-                  href={`/admin/notifications`}
+                  href={`/developer/notifications`}
                   className="p-2 rounded-lg flex items-center justify-center"
                 >
                   <div className="relative">
@@ -113,7 +113,7 @@ export default function DeveloperNavBar({ session }: { session: any }) {
                       } bg-white py-3 shadow-md rounded-lg text-sm border border-[#213f7d0f] space-y-2 absolute right-[-1px] lg:right-[-18px] z-[1] top-[50px]`}
                     >
                       <Link
-                        href={`/admin/settings/account`}
+                        href={`/developer/settings/account`}
                         className="hover:bg-gray-100 flex items-center gap-x-2 cursor-pointer p-2 pr-10 pl-4"
                       >
                         <Settings size={18} className="text-gray-600" />
@@ -138,7 +138,7 @@ export default function DeveloperNavBar({ session }: { session: any }) {
           {/* ======= Menu button (Hamburger button) ======*/}
           <div className="lg:hidden flex space-x-3">
             <Link
-              href={`/admin/notifications`}
+              href={`/developer/notifications`}
               className="bg-slate-300 dark:hover:bg-muted p-2 rounded-lg flex items-center justify-center"
             >
               <div className="relative">

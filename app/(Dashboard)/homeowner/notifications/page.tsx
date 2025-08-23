@@ -21,8 +21,8 @@ export default async function NotificationPage() {
         <p className="text-2xl font-bold mb-2">HomeOwner Notification</p>
         <p className="max-w-[550px] leading-8 font-light">
           Stay updated with real-time notifications on application requests.
-          Geomatic Connect keeps you informed and engaged throughout your
-          training journey. All alerts are personalized and available anytime in
+          Alive Home keeps you informed and engaged throughout your
+          recommendations . All alerts are personalized and available anytime in
           your dashboard.
         </p>
       </div>

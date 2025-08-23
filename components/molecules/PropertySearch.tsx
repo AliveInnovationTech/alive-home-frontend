@@ -1,32 +1,31 @@
-import RealEstateFour from "@/public/assets/real-estate-4.jpg";
-import RealEstateOne from "@/public/assets/real-estate.jpg";
+"use client";
 import { Card, CardContent } from "@/components/ui/card";
+import { propertiesData } from "@/utils/propertiesData";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function PropertySearch() {
-  const properties = [
-    {
-      id: 1,
-      title: "123 Oak Avenue, Springfield",
-      price: "$350,000",
-      beds: 3,
-      baths: 2.5,
-      area: "1800 sqft",
-      tags: ["Garage", "New Build", "Smart Home"],
-      image: RealEstateOne,
-    },
-    {
-      id: 2,
-      title: "101 Cedar Lane, Lakeview",
-      price: "$620,000",
-      beds: 5,
-      baths: 4,
-      area: "3200 sqft",
-      tags: ["Swimming Pool", "Gated Community"],
-      image: RealEstateFour,
-    },
-  ];
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredProperties, setFilteredProperties] = useState(propertiesData);
+
+  const handleSearch = () => {
+    const lowerCaseTerm = searchTerm.toLowerCase();
+    const results = propertiesData.filter((property) => {
+      const { title, price, area, beds, baths, tags } = property;
+      const combinedString = `
+        ${title} 
+        ${price} 
+        ${area} 
+        ${beds} 
+        ${baths} 
+        ${tags.join(" ")}
+      `.toLowerCase();
+      return combinedString.includes(lowerCaseTerm);
+    });
+
+    setFilteredProperties(results);
+  };
 
   return (
     <div className="py-6 space-y-8">
@@ -34,50 +33,56 @@ export default function PropertySearch() {
       <div className="flex items-center gap-2">
         <input
           type="text"
-          placeholder="Search by address, city, or ZIP code..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Search by area, title, beds, baths, price, tags..."
           className="flex-1 border rounded-lg px-4 py-2"
         />
-        <Button>Search</Button>
+        <Button onClick={handleSearch}>Search</Button>
         <Button variant="outline" className="hidden md:block">
           Filter
         </Button>
       </div>
-      {/* AI Recommended Properties */}
+
+      {/* Recommended Properties */}
       <div>
-        <h2 className="text-xl font-semibold mb-4">
-          AI Recommended Properties
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {properties.map((item) => (
-            <Card key={item.id} className="overflow-hidden shadow-lg">
-              <Image
-                src={item.image}
-                width={300}
-                height={300}
-                alt={item.title}
-                className="w-full h-50 object-cover -mt-6"
-              />
-              <CardContent className="p-4 space-y-2">
-                <h3 className="font-semibold">{item.title}</h3>
-                <p className="text-green-600 font-bold">{item.price}</p>
-                <p className="text-sm text-gray-600">
-                  {item.beds} Beds • {item.baths} Baths • {item.area}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {item.tags.map((tag, idx) => (
-                    <span
-                      key={idx}
-                      className="text-xs bg-gray-100 px-2 py-1 rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <Button className="w-full mt-3">View Details</Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <h2 className="text-xl font-semibold mb-4">Recommended Properties</h2>
+
+        {filteredProperties.length === 0 ? (
+          <p className="text-gray-500">No properties found.</p>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {filteredProperties.map((item) => (
+              <Card key={item.id} className="overflow-hidden shadow-lg">
+                <Image
+                  src={item.image}
+                  width={300}
+                  height={300}
+                  alt={item.title}
+                  className="w-full h-50 object-cover -mt-6"
+                />
+                <CardContent className="p-4 space-y-2">
+                  <h3 className="font-semibold">{item.title}</h3>
+                  <p className="text-green-600 font-bold">{item.price}</p>
+                  <p className="text-sm text-gray-600">
+                    {item.beds} Beds • {item.baths} Baths • {item.area}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {item.tags.map((tag, idx) => (
+                      <span
+                        key={idx}
+                        className="text-xs bg-gray-100 px-2 py-1 rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <Button className="w-full mt-3">View Details</Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

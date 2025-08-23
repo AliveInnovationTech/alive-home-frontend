@@ -3,12 +3,12 @@ import { propertiesData } from "@/utils/propertiesData";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-export default function SavedProperties() {
+export default function AiRecommendation() {
   return (
     <div className="py-6 space-y-8">
       <div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {propertiesData.slice(0, 3).map((item) => (
+          {propertiesData.slice(3, 5).map((item) => (
             <Card key={item.id} className="overflow-hidden shadow-lg">
               <Image
                 src={item.image}
