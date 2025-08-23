@@ -46,7 +46,7 @@ export default function CreateProperty({ toggleChat }: CreatePropertyProps) {
     price: "",
     status: "",
     features: "",
-    mediaFile: [] as File[],
+    ImageTitle: [] as File[],
   });
 
   const handleChange = (field: string, value: any) => {
@@ -57,18 +57,16 @@ export default function CreateProperty({ toggleChat }: CreatePropertyProps) {
     if (!e.target.files) return;
     setFormData((prev) => ({
       ...prev,
-      mediaFile: Array.from(e.target.files as any),
+      ImageTitle: Array.from(e.target.files as any),
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-
     try {
       const payload = { ...formData };
       console.log("Submitting property:", payload);
-
       const response = await createPropertyRequest(payload, token);
       console.log("Property response is here====:", response);
       toast.success("Property listed successfully!");
@@ -119,10 +117,14 @@ export default function CreateProperty({ toggleChat }: CreatePropertyProps) {
                   <SelectValue placeholder="Select type" />
                 </SelectTrigger>
                 <SelectContent className="z-[1100]" position="popper">
-                  <SelectItem value="house">House</SelectItem>
-                  <SelectItem value="apartment">Apartment</SelectItem>
-                  <SelectItem value="condo">Condo</SelectItem>
-                  <SelectItem value="land">Land</SelectItem>
+                  <SelectItem value="APARTMENT">Apartment</SelectItem>
+                  <SelectItem value="CONDO">Condo</SelectItem>
+                  <SelectItem value="SINGLE_FAMILY'">Single Family</SelectItem>
+                  <SelectItem value="MULTI_FAMILY'">Multi Family</SelectItem>
+                  <SelectItem value="COMMERCIAL'">Commercial</SelectItem>
+                  <SelectItem value="LAND'">Land</SelectItem>
+                  <SelectItem value="VILLA'">Villa</SelectItem>
+                  <SelectItem value="TOWNHOUSE'">Town House</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -264,9 +266,13 @@ export default function CreateProperty({ toggleChat }: CreatePropertyProps) {
                 <SelectValue placeholder="Select status" />
               </SelectTrigger>
               <SelectContent className="z-[1100]" position="popper">
-                <SelectItem value="available">Available</SelectItem>
+                <SelectItem value="active">Active</SelectItem>
+                <SelectItem value="PENDING">Pending</SelectItem>
+                <SelectItem value="DRAFT">Draft</SelectItem>
                 <SelectItem value="sold">Sold</SelectItem>
-                <SelectItem value="pending">Pending</SelectItem>
+                <SelectItem value="unavailable">Unavailable</SelectItem>
+                <SelectItem value="AVAILABLE">Available</SelectItem>
+                <SelectItem value="SOLD">Sold</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -292,9 +298,9 @@ export default function CreateProperty({ toggleChat }: CreatePropertyProps) {
               onChange={handleFileChange}
               className="cursor-pointer"
             />
-            {formData.mediaFile.length > 0 && (
+            {formData.ImageTitle.length > 0 && (
               <ul className="list-disc list-inside text-sm text-gray-600">
-                {formData.mediaFile.map((file, idx) => (
+                {formData.ImageTitle.map((file, idx) => (
                   <li key={idx}>{file.name}</li>
                 ))}
               </ul>

@@ -1,3 +1,4 @@
+import PropertyInsights from "@/components/molecules/PropertyInsight";
 import { StatisticsCard } from "@/components/cards/StatisticsCard";
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
@@ -14,11 +15,12 @@ export default async function DashboardPage() {
         <p className="text-gray-500">Manage the overview of your account</p>
       </div>
       <div className="my-8 grid grid-cols-2 gap-3 xl:grid-cols-4 xl:gap-6">
-        <StatisticsCard title={"Saved Properties"} value={20} />
+        <StatisticsCard title={"Created Properties"} value={20} />
         <StatisticsCard title={"New Recommendations"} value={40} />
         <StatisticsCard title={"Saved Properties"} value={50} />
         <StatisticsCard title={"Saved Properties"} value={80} />
       </div>
+      <PropertyInsights />
     </main>
   );
 }
