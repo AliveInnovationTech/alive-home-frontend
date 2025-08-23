@@ -47,11 +47,11 @@ Create a `.env` file in the project root:
 # Site Information (Optional)
 NODE_ENV="development"
 NEXT_PUBLIC_BASEURL="backendurl goes here"
-NEXT_PUBLIC_APP_URL=https://www.aliveHome.vercel.app
+NEXT_PUBLIC_APP_URL=https://alive-home.vercel.app
 
 # Next-Auth Config
 NEXTAUTH_SECRET=your_nextauth_secrete
-NEXTAUTH_URL=https://www.aliveHome.vercel.app
+NEXTAUTH_URL=https://alive-home.vercel.app
 NEXTAUTH_DEBUG=true
 
 
