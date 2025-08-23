@@ -29,7 +29,7 @@ Alive Home is an AI-driven real estate technology platform that leverages proxim
 ### 1. Clone the Repository
 
 ```bash
-git clone -b DevCentral https://github.com/olatunde1998/alive-frontend.git
+git clone https://github.com/AliveInnovationTech/alive-home-frontend.git
 cd alive-frontend
 ```
 
@@ -56,14 +56,14 @@ NEXTAUTH_DEBUG=true
 
 
 # OpenAI API & Gemini API Key
-OPENAI_API_KEY=afrenai_openai_api_key
-GEMINI_API_KEY=afrenai_gemini_api_key
+OPENAI_API_KEY=alivehome_openai_api_key
+GEMINI_API_KEY=alivehome_gemini_api_key
 ```
 
 ### 4. Start Development Server
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 Visit [http://localhost:3000](http://localhost:3000) to see your application running!
@@ -72,17 +72,17 @@ Visit [http://localhost:3000](http://localhost:3000) to see your application run
 
 AWS Amplify was used to deploy the app.
 
+- [Vercel](https://vercel.com/)
 - [AWS AMPLIFY](https://us-east-1.console.aws.amazon.com/amplify)
 
 # License
 
-The MIT License - Copyright (c) 2025 - Present, afrenai / Storage Service.
+The MIT License - Copyright (c) 2025 - Present, Alive Home / Storage Service.
 
 ## 🆘 Support
 
 - **Vercel AI-SDK**: [Vercel AI-SDK Documentation](https://ai-sdk.dev/docs/introduction/)
 - **NextAuth**: [Appwrite Documentation](https://next-auth.js.org/)
-- **Next.js internationalization (i18n)**: [Next.js internationalization (i18n)](https://next-intl.dev/docs)
 
 ## 🙏 Acknowledgments
 
