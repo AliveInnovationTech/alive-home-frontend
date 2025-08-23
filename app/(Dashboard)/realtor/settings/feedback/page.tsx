@@ -4,8 +4,8 @@ import { auth } from "@/auth";
 import Trash from "@/components/trash/Trash";
 
 export const metadata: Metadata = {
-  title: "Feedback | Afren ai",
-  description: "Afren AI - AI-driven real estate technology platform",
+  title: "Feedback | Alive Home",
+  description: "Alive Home - AI-driven real estate technology platform",
 };
 export default async function FeedbackPage() {
   const session = await auth();

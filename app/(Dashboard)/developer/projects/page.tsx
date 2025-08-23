@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 import { auth } from "@/auth";
 
 export const metadata: Metadata = {
-  title: "Message | Afren ai",
-  description: "Afren AI - AI-driven real estate technology platform",
+  title: "Message | Alive Home",
+  description: "Alive Home - AI-driven real estate technology platform",
 };
 export default async function MessagePage() {
   const session = await auth();
