@@ -8,6 +8,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Bell, LogOut, Settings } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Modal } from "@/components/modals/Modal";
+import Chatbot from "@/components/chatbot/ChatBot";
+import { IoSparklesSharp } from "react-icons/io5";
 import { useQuery } from "@tanstack/react-query";
 import { HiMenu, HiX } from "react-icons/hi";
 import { useRouter } from "next/navigation";
@@ -21,6 +23,7 @@ export default function DeveloperNavBar({ session }: { session: any }) {
   const [showActions, setShowActions] = useState(false);
   const [showLogOut, setShowLogOut] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const router = useRouter();
   const [currentPage] = useState(1);
   const [limit] = useState(6);
@@ -46,6 +49,11 @@ export default function DeveloperNavBar({ session }: { session: any }) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  // Toggle Chatbot handler
+  const toggleChat = () => {
+    setIsChatOpen(!isChatOpen);
+  };
 
   return (
     <>
@@ -74,6 +82,13 @@ export default function DeveloperNavBar({ session }: { session: any }) {
             </div>
             <div className="hidden lg:flex items-center gap-x-2 text-sm md:text-base cursor-pointer font-light w-fit">
               <div className="flex items-center space-x-3 ml-4">
+                <p
+                  onClick={() => toggleChat()}
+                  className="bg-[#F2F6F6] border-[#014751] px-3 py-1.5 font-medium cursor-pointer rounded-md mx-4 hover:text-[#014751] hidden lg:flex items-center gap-3"
+                >
+                  <IoSparklesSharp size={18} className="blink-animation" />{" "}
+                  <span>Ask AI</span>
+                </p>
                 <Link
                   href={`/developer/notifications`}
                   className="p-2 rounded-lg flex items-center justify-center"
@@ -225,6 +240,9 @@ export default function DeveloperNavBar({ session }: { session: any }) {
 
       <Modal show={showLogOut} onClose={() => setShowLogOut(false)}>
         <Logout setShowLogOut={setShowLogOut} />
+      </Modal>
+      <Modal show={isChatOpen} onClose={() => setIsChatOpen(false)}>
+        <Chatbot toggleChat={toggleChat} />
       </Modal>
     </>
   );
