@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Bell, LogOut, Settings } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Modal } from "@/components/modals/Modal";
+import { IoSparklesSharp } from "react-icons/io5";
 import { useQuery } from "@tanstack/react-query";
 import { HiMenu, HiX } from "react-icons/hi";
 import { useRouter } from "next/navigation";
