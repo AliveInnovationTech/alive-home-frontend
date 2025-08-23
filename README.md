@@ -8,7 +8,7 @@ Alive Home is an AI-driven real estate technology platform that leverages proxim
 
 # 🏗️ Tech Stack
 
-- **Framework**: [Next.js 14](https://nextjs.org/) with App Router
+- **Framework**: [Next.js 15](https://nextjs.org/) with App Router
 - **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
 - **Authentication**: [NestJs](https://nestjs.com/) [NextAuth](https://next-auth.js.org/)
 - **Database**: [Mongodb Database](https://account.mongodb.com/) [Prisma ORM](https://www.prisma.io/)
