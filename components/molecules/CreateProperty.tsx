@@ -64,11 +64,20 @@ export default function CreateProperty({ toggleChat }: CreatePropertyProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+
     try {
-      const payload = { ...formData };
-      console.log("Submitting property:", payload);
-      const response = await createPropertyRequest(payload, token);
-      console.log("Property response is here====:", response);
+      const formPayload = new FormData();
+      // Append text fields
+      Object.entries(formData).forEach(([key, value]) => {
+        if (key !== "ImageTitle") {
+          formPayload.append(key, value as string);
+        }
+      });
+      // Append files
+      formData.ImageTitle.forEach((file) => {
+        formPayload.append("ImageTitle", file);
+      });
+      await createPropertyRequest(formPayload, token);
       toast.success("Property listed successfully!");
       toggleChat();
     } catch (error: any) {
