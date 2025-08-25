@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { auth } from "@/auth";
 
 export const metadata: Metadata = {
-  title: "Message | Alive Home",
+  title: "Upload Document | Alive Home",
   description: "Alive Home - AI-driven real estate technology platform",
 };
 export default async function MessagePage() {
@@ -18,13 +18,13 @@ export default async function MessagePage() {
   return (
     <main className="min-h-screen p-6 pt-24 lg:p-12 xl:p-20 lg:pt-32 xl:pt-32 font-sans text-md">
       <div className="w-full font-sans text-md ">
-        <p className="text-2xl font-bold mb-2">Message</p>
-        <p className="text-gray-500">Manage the Message of your account</p>
+        <p className="text-2xl font-bold mb-2">Upload Documents</p>
+        <p className="text-gray-500">Manage your project document seamlessly</p>
       </div>
       <div className="gap-2 my-6">
         <Trash
-          headingText="No Message"
-          subHeadingText="No message found yet. Kindly please check back later."
+          headingText="No Document Found"
+          subHeadingText="No Document found yet. Kindly Upload your Property document now."
         />
       </div>
     </main>

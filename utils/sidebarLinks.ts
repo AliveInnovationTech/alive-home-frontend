@@ -137,7 +137,7 @@ export const homeOwnerNavItems = [
   },
   {
     name: "Upload Documents",
-    href: "/homeowner/message",
+    href: "/homeowner/upload-document",
     icon: Upload,
   },
   {
