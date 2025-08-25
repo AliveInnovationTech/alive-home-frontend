@@ -28,8 +28,8 @@ export default async function NotificationPage() {
       </div>
       <div className="gap-2 my-6">
         <Trash
-          headingText="Start Adding Users"
-          subHeadingText="No users have been added yet. Click the 'Add User' button above to create a new user."
+          headingText="No Notifications Yet"
+          subHeadingText="No Notification have been received yet. Check back later."
         />
       </div>
     </main>
