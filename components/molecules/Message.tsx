@@ -114,7 +114,7 @@ export default function ChatPage() {
       <aside
         className={`${
           showChatList ? "flex" : "hidden"
-        } md:flex md:w-1/4 lg:w-[30%] flex-col border-r border-gray-200 bg-white`}
+        } md:flex w-full md:w-[30%] flex-col border-r border-gray-200 bg-white`}
       >
         {/* Search */}
         <div className="p-3 border-b">
