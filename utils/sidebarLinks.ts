@@ -147,7 +147,7 @@ export const homeOwnerNavItems = [
   },
   {
     name: "Appointments",
-    href: "/homeowner/saved-properties",
+    href: "/homeowner/appointments",
     icon: CalendarCheck,
   },
   {
@@ -295,7 +295,7 @@ export const homeOwnerMobileRoutes = [
 
   {
     name: "Saved Properties",
-    href: "/homeowner/saved-properties",
+    href: "/homeowner/appointments",
   },
   {
     name: "Settings",
