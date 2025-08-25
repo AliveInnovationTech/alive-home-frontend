@@ -238,6 +238,20 @@ export default function DeveloperNavBar({ session }: { session: any }) {
         </section>
       </nav>
 
+      <div
+        onClick={() => toggleChat()}
+        className="bg-[#ffffff] border-[0.5px] border-slate-200 text-black p-2  px-3.5 h-fit w-fit flex justify-center items-center gap-2 rounded-3xl font-normal  fixed bottom-10 right-4 z-[999] lg:hidden animate-bounce"
+      >
+        <div className="bg-[#019734] p-2 rounded-full flex items-center w-8 h-8">
+          <IoSparklesSharp
+            color="#FFFFFF"
+            size={24}
+            className="blink-animation"
+          />
+        </div>
+        Ask AI
+      </div>
+
       <Modal show={showLogOut} onClose={() => setShowLogOut(false)}>
         <Logout setShowLogOut={setShowLogOut} />
       </Modal>
