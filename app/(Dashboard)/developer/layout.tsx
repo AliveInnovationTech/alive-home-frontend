@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function StudentLayout({
+export default async function DeveloperLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

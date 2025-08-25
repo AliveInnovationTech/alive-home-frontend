@@ -1,9 +1,9 @@
 import { BuyerSidebar } from "@/components/sidebar/BuyerSidebar";
 import BottomNavBar from "@/components/navbar/BottomNavBar";
+import BuyerNavBar from "@/components/navbar/BuyerNavBar";
 import { Geist, Geist_Mono } from "next/font/google";
 import type { Metadata } from "next";
 import { auth } from "@/auth";
-import BuyerNavBar from "@/components/navbar/BuyerNavBar";
 
 const APP_NAME = "Alive Home ai";
 const APP_DEFAULT_TITLE = "Alive Home ai";
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function StudentLayout({
+export default async function BuyerLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
