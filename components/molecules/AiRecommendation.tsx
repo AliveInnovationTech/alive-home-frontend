@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { useSession } from "next-auth/react";
+import Trash from "@/components/trash/Trash";
 import Image from "next/image";
 
 export default function AiRecommendation() {
@@ -31,7 +32,12 @@ export default function AiRecommendation() {
           </div>
         )}
         {propertiesData?.length === 0 ? (
-          <p className="text-gray-500">No properties found.</p>
+          <div className="gap-2 my-6">
+            <Trash
+              headingText="No Property"
+              subHeadingText="No Property have been received yet. Check back later."
+            />
+          </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {propertiesData?.slice(3, 5)?.map((item: any) => {

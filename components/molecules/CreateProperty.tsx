@@ -1,5 +1,6 @@
 "use client";
 import { createPropertyRequest } from "@/app/services/property-service/property.service";
+import { useQueryClient } from "@tanstack/react-query";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useSession } from "next-auth/react";
@@ -24,6 +25,7 @@ export default function CreateProperty({ toggleChat }: CreatePropertyProps) {
   const { data: session } = useSession();
   const token = session?.user?.token as string;
   const userId = session?.user?.id as string;
+  const queryClient = useQueryClient();
 
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -79,6 +81,9 @@ export default function CreateProperty({ toggleChat }: CreatePropertyProps) {
       });
       await createPropertyRequest(formPayload, token);
       toast.success("Property listed successfully!");
+      await queryClient.invalidateQueries({
+        queryKey: ["getProperties"],
+      });
       toggleChat();
     } catch (error: any) {
       console.error("Error:", error);
