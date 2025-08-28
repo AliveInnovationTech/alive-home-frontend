@@ -18,6 +18,7 @@ export default auth((req) => {
   ];
   const isPublicPage =
     publicPages.includes(pathname) ||
+    pathname.startsWith("/market-place") ||
     pathname.startsWith("/blog/") ||
     pathname.startsWith("/jobs/");
 
