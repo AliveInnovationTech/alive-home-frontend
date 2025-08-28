@@ -3,6 +3,7 @@ import BrandLogo from "@/public/assets/alive-home-logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { IoSparklesSharp } from "react-icons/io5";
 import { HiMenu, HiX } from "react-icons/hi";
+import { useRouter } from "next/navigation";
 import Chatbot from "../chatbot/ChatBot";
 import { Modal } from "../modals/Modal";
 import { Landmark } from "lucide-react";
@@ -13,7 +14,7 @@ import Link from "next/link";
 const routes = [
   {
     name: "Market Place",
-    href: "market-id",
+    href: "/market-place",
     icon: Landmark,
   },
 ];
@@ -29,21 +30,14 @@ const mobileRoutes = [
   },
   {
     name: "Market Place",
-    href: "#",
+    href: "/market-place",
   },
 ];
 
 export default function Navbar() {
-  const [dropNav, setDropNav] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
-
-  const handleSmoothScroll = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
+  const [dropNav, setDropNav] = useState(false);
+  const router = useRouter();
   const toggleChat = () => {
     setIsChatOpen(!isChatOpen);
   };
@@ -51,7 +45,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed w-full z-20 top-0 left-0  py-2 md:py-2.5 border-b-[0.5px] bg-[#FDFDFD]">
-        <div className="max-w-[1200px] mx-auto p-2 pr-4 md:px-2 flex justify-between items-center">
+        <div className="max-w-[1300px] mx-auto p-2 pr-4 md:px-2 flex justify-between items-center">
           {/* =======Company LOGO ==== */}
           <Link href="/" className="flex items-center relative  w-20 h-10">
             <Image
@@ -83,7 +77,7 @@ export default function Navbar() {
                   <li
                     key={index}
                     className="relative hover:text-[#C77D01] flex items-center gap-2 w-fit px-2.5 py-1.5 rounded-lg group cursor-pointer"
-                    onClick={() => handleSmoothScroll(`${route.href}`)}
+                    onClick={() => router.push(`${route.href}`)}
                   >
                     <Icon className="size-4" />
                     <span className="cursor-pointer">{route.name}</span>
