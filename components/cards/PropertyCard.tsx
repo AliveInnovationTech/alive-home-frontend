@@ -3,8 +3,12 @@ import { MapPin, Bed, Bath, Square } from "lucide-react";
 import { PropertyCardProps } from "@/types/property";
 import { formatPrice } from "@/utils/utils";
 import Image from "next/image";
+import Link from "next/link";
 
-export const PropertyCard = ({ property, isMapView = false }: PropertyCardProps) => (
+export const PropertyCard = ({
+  property,
+  isMapView = false,
+}: PropertyCardProps) => (
   <div
     className={`bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow ${
       isMapView && "w-80"
@@ -12,10 +16,11 @@ export const PropertyCard = ({ property, isMapView = false }: PropertyCardProps)
   >
     <div className="relative">
       <Image
-        src={property.image as string}
+        src={property.images[0] as string}
         alt={property.address as string}
         width={100}
         height={100}
+        sizes="(max-width: 768px) 100vw, 50vw"
         className="w-full h-48 object-cover"
       />
     </div>
@@ -44,6 +49,12 @@ export const PropertyCard = ({ property, isMapView = false }: PropertyCardProps)
       {property.type && (
         <div className="text-sm text-gray-500 mt-2">{property.type}</div>
       )}
+      <Link
+        href={`/market-place/${property.id}`}
+        className="mt-4 inline-block w-full text-center bg-black text-white py-2 px-4 rounded-lg hover:bg-gray-800 transition"
+      >
+        View Details
+      </Link>
     </div>
   </div>
 );
