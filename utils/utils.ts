@@ -43,6 +43,22 @@ export function formatTimestamp(timestamp: string): string {
   return formattedDate.replace(",", "").replace(" ", " at ");
 }
 
+// Price Formatting
+export const formatPrice = (price: number) => {
+  // For whole numbers (like in your example)
+  if (price % 1 === 0) {
+    return `₦${price.toLocaleString("en-US", {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    })}`;
+  }
+  // For decimal numbers
+  return `₦${price.toLocaleString("en-US", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })}`;
+};
+
 // FUNCTION TO GENERATE SLUG
 export function generateSlug(title: string) {
   const slug = title
