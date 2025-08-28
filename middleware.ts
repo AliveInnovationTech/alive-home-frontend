@@ -13,6 +13,7 @@ export default auth((req) => {
     "/forgot-password",
     "/reset-password",
     "/consent-form",
+    "/market-place",
     "/opengraph-image",
   ];
   const isPublicPage =
