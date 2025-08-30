@@ -153,16 +153,24 @@ export default function BuyerConsentForm() {
                 <SelectValue placeholder="Select property type" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="HOUSE">House</SelectItem>
-                <SelectItem value="CONDO">Condo</SelectItem>
-                <SelectItem value="TOWNHOUSE">Town House</SelectItem>
-                <SelectItem value="SINGLE_FAMILY">Single Family</SelectItem>
-                <SelectItem value="MULTI_FAMILY">Multi Family</SelectItem>
-                <SelectItem value="APARTMENT">Apartment</SelectItem>
-                <SelectItem value="COMMERCIAL">Commercial</SelectItem>
-                <SelectItem value="LAND">Land</SelectItem>
-                <SelectItem value="VILLA">Villa</SelectItem>
+                <SelectItem value="house">House</SelectItem>
+                <SelectItem value="condo">Condo</SelectItem>
+                <SelectItem value="townhouse">Town House</SelectItem>
+                <SelectItem value="single family">Single Family</SelectItem>
+                <SelectItem value="multifamily">Multi Family</SelectItem>
+                <SelectItem value="apartment">Apartment</SelectItem>
+                <SelectItem value="commercial">Commercial</SelectItem>
+                <SelectItem value="land">Land</SelectItem>
+                <SelectItem value="villa">Villa</SelectItem>
               </SelectContent>
+              {/* propertyType must be one of [apartment, house, villa, townhouse,
+              detached house, boys quarters, semi detached, terrace house,
+              duplex, mansion, estate house, bungalow, penthouse, mini flat,
+              chalet, commercial, land, commercial office, commercial plaza,
+              retail shop, warehouse, hotel, land residential, room and parlour,
+              compound, student hostel, land commercial, land industrial, land
+              agricultural, serviced apartment, self contained, condo,
+              multifamily, single family] */}
             </Select>
           </div>
           {/* Submit */}

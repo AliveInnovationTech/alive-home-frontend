@@ -24,7 +24,9 @@ export default function Properties() {
     refetchOnWindowFocus: false,
     refetchIntervalInBackground: true,
   });
-  const propertiesData = getProperties?.data || null;
+  const propertiesData = getProperties?.data?.data || null;
+
+  console.log(propertiesData?.data, "this is it here====")
 
   const toggleChat = () => {
     setIsChatOpen(!isChatOpen);

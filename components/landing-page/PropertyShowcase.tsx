@@ -7,6 +7,7 @@ import PropertyFive from "@/public/assets/property5.jpg";
 import PropertyOne from "@/public/assets/property1.jpg";
 import PropertyTwo from "@/public/assets/property2.jpg";
 import PropertySix from "@/public/assets/property6.jpg";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -28,6 +29,7 @@ function MarqueeRow({
   reverse?: boolean;
   speed?: number;
 }) {
+  const router = useRouter();
   return (
     <div className="overflow-hidden">
       <motion.div
@@ -39,6 +41,7 @@ function MarqueeRow({
           duration: speed,
           ease: "linear",
         }}
+        onClick={() => router.push("/market-place")}
       >
         {[...properties, ...properties].map((src, i) => (
           <div
@@ -78,4 +81,3 @@ export default function PropertyShowcase() {
     </section>
   );
 }
-

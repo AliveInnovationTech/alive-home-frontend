@@ -19,7 +19,7 @@ export default function AiRecommendation() {
     refetchOnWindowFocus: false,
     refetchIntervalInBackground: true,
   });
-  const propertiesData = getProperties?.data || null;
+  const propertiesData = getProperties?.data?.data || null;
 
   return (
     <div className="py-6 space-y-8">
