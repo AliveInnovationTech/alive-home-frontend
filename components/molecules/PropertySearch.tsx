@@ -6,8 +6,17 @@ import { useQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { useSession } from "next-auth/react";
 import Trash from "@/components/trash/Trash";
-import Image from "next/image";
 import { useState } from "react";
+import Image from "next/image";
+
+const placeholderImages = [
+  "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9",
+  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+  "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea",
+  "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9",
+  "https://images.unsplash.com/photo-1600612622563-3f85c3b944be",
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+];
 
 export default function PropertySearch() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -60,10 +69,10 @@ export default function PropertySearch() {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {propertiesData?.map((item: any) => {
+            {propertiesData?.map((item: any, index: number) => {
               const mainImage =
                 item.media?.find((m: any) => m.isMainImage)?.cloudinaryUrl ||
-                "/placeholder.jpg";
+                placeholderImages[index % placeholderImages.length];
               return (
                 <Card
                   key={item.propertyId}
@@ -74,6 +83,7 @@ export default function PropertySearch() {
                     width={300}
                     height={200}
                     alt={item.title}
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="w-full h-50 object-cover -mt-6"
                   />
                   <CardContent className="p-4 space-y-2">
