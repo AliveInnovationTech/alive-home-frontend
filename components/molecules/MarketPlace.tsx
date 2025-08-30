@@ -57,13 +57,15 @@ export default function MarketPlace() {
                   <SelectValue placeholder="Select property type" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="CONDO">Condo</SelectItem>
-                  <SelectItem value="TOWNHOUSE">Town House</SelectItem>
-                  <SelectItem value="SINGLE_FAMILY">Single Family</SelectItem>
-                  <SelectItem value="MULTI_FAMILY">Multi Family</SelectItem>
-                  <SelectItem value="APARTMENT">Apartment</SelectItem>
-                  <SelectItem value="COMMERCIAL">Commercial</SelectItem>
-                  <SelectItem value="VILLA">Villa</SelectItem>
+                  <SelectItem value="house">House</SelectItem>
+                  <SelectItem value="condo">Condo</SelectItem>
+                  <SelectItem value="townhouse">Town House</SelectItem>
+                  <SelectItem value="single family">Single Family</SelectItem>
+                  <SelectItem value="multifamily">Multi Family</SelectItem>
+                  <SelectItem value="apartment">Apartment</SelectItem>
+                  <SelectItem value="commercial">Commercial</SelectItem>
+                  <SelectItem value="land">Land</SelectItem>
+                  <SelectItem value="villa">Villa</SelectItem>
                 </SelectContent>
               </Select>
             </div>
